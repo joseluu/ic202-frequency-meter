@@ -2266,7 +2266,397 @@
 				)
 			)
 		)
-		(symbol "IC202:7SEG_3DIGIT_CC"
+		(symbol "Connector_Generic:Conn_01x10"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x10"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x10_1_1"
+				(rectangle
+					(start -1.27 11.43)
+					(end 1.27 -13.97)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 10.287)
+					(end 0 10.033)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 7.747)
+					(end 0 7.493)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -12.573)
+					(end 0 -12.827)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 10.16 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 7.62 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -10.16 0)
+					(length 3.81)
+					(name "Pin_9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 3.81)
+					(name "Pin_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "IC202:LCD_3DIGIT_TN_10PIN"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -2282,7 +2672,7 @@
 					)
 				)
 			)
-			(property "Value" "7SEG_3DIGIT_CC"
+			(property "Value" "LCD_3DIGIT_TN_10PIN"
 				(at 0 -2.54 0)
 				(effects
 					(font
@@ -2299,7 +2689,7 @@
 				)
 				(hide yes)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" "https://fr.aliexpress.com/item/1005003745628043.html"
 				(at 0 -7.62 0)
 				(effects
 					(font
@@ -2308,7 +2698,7 @@
 				)
 				(hide yes)
 			)
-			(property "Description" "3-digit multiplexed 7-segment LED display, common cathode, 10 pins (no decimal point). VERIFY pin numbers against the actual part datasheet."
+			(property "Description" "Afficheur LCD TN 3 digits 7 segments, 10 broches, multiplexe 1/4 duty 1/2 bias, 3.0V. Repartition COM/SEG a confirmer aupres du fournisseur."
 				(at 0 -10.16 0)
 				(effects
 					(font
@@ -2317,7 +2707,7 @@
 				)
 				(hide yes)
 			)
-			(property "ki_keywords" "display 7segment led multiplexed 3 digit common cathode"
+			(property "ki_keywords" "LCD TN 3 digit 7 segment multiplex 1/4 duty 1/2 bias 3V"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2326,10 +2716,10 @@
 				)
 				(hide yes)
 			)
-			(symbol "7SEG_3DIGIT_CC_0_1"
+			(symbol "LCD_3DIGIT_TN_10PIN_0_1"
 				(rectangle
-					(start -10.16 20.32)
-					(end 10.16 -20.32)
+					(start -12.7 15.24)
+					(end 12.7 -15.24)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -2339,137 +2729,11 @@
 					)
 				)
 			)
-			(symbol "7SEG_3DIGIT_CC_1_1"
+			(symbol "LCD_3DIGIT_TN_10PIN_1_1"
 				(pin passive line
-					(at -15.24 7.62 0)
+					(at -17.78 11.43 0)
 					(length 5.08)
-					(name "DIG1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -15.24 2.54 0)
-					(length 5.08)
-					(name "DIG2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -15.24 -2.54 0)
-					(length 5.08)
-					(name "DIG3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 15.24 180)
-					(length 5.08)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 10.16 180)
-					(length 5.08)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 5.08 180)
-					(length 5.08)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 0 180)
-					(length 5.08)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 15.24 -5.08 180)
-					(length 5.08)
-					(name "E"
+					(name "COM1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2485,9 +2749,135 @@
 					)
 				)
 				(pin passive line
-					(at 15.24 -10.16 180)
+					(at -17.78 8.89 0)
 					(length 5.08)
-					(name "F"
+					(name "COM2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 6.35 0)
+					(length 5.08)
+					(name "COM3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 3.81 0)
+					(length 5.08)
+					(name "COM4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 -1.27 0)
+					(length 5.08)
+					(name "SEG1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 -3.81 0)
+					(length 5.08)
+					(name "SEG2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 -6.35 0)
+					(length 5.08)
+					(name "SEG3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 -8.89 0)
+					(length 5.08)
+					(name "SEG4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 -11.43 0)
+					(length 5.08)
+					(name "SEG5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2503,16 +2893,16 @@
 					)
 				)
 				(pin passive line
-					(at 15.24 -15.24 180)
+					(at -17.78 -13.97 0)
 					(length 5.08)
-					(name "G"
+					(name "SEG6"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "5"
+					(number "10"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3195,7 +3585,7 @@
 				)
 			)
 		)
-		(property "Value" "160R"
+		(property "Value" "140R"
 			(at 162.56 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4661,6 +5051,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide no)
 			)
 		)
 		(property "Footprint" ""
@@ -4778,909 +5169,6 @@
 			(project "ic202-frequencemetre"
 				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
 					(reference "A1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "IC202:7SEG_3DIGIT_CC")
-		(at 350.52 175.26 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c3eecc5f-b93b-420b-acf7-177094ad13d5")
-		(property "Reference" "DS1"
-			(at 350.52 173.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3 digit CC"
-			(at 350.52 176.53 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 350.52 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 350.52 167.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "3-digit multiplexed 7-segment LED display, common cathode, 10 pins (no decimal point). VERIFY pin numbers against the actual part datasheet."
-			(at 350.52 165.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c133bae8-2be9-491c-b7c7-b9850854b67c")
-		)
-		(pin "10"
-			(uuid "49bf488e-e231-4c5c-8afd-0ed74c71703c")
-		)
-		(pin "2"
-			(uuid "edc7b30d-536d-4556-b643-ae3f53a4a4c7")
-		)
-		(pin "3"
-			(uuid "bb1d85a0-a84b-4008-bead-4950b431ed4f")
-		)
-		(pin "4"
-			(uuid "8255c405-a11d-437a-bf0c-921d39e92349")
-		)
-		(pin "5"
-			(uuid "cdf228ec-2f06-4544-b379-c72aa9c6b974")
-		)
-		(pin "6"
-			(uuid "c578b6f0-32fc-4f3c-9cc4-767c3b24c594")
-		)
-		(pin "7"
-			(uuid "12fceda1-acf5-4890-af02-978cc0066e2d")
-		)
-		(pin "8"
-			(uuid "686e9361-9593-46d3-87ef-c2f384bd4639")
-		)
-		(pin "9"
-			(uuid "98065e67-b5d2-4921-a6a6-fcb55890b1fb")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "DS1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 386.08 160.02 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e9a70384-16e0-443b-a09b-1cfae16c5a85")
-		(property "Reference" "R7"
-			(at 386.08 157.48 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220R"
-			(at 386.08 160.02 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 386.08 161.798 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 386.08 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 386.08 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b536f838-dc80-4d01-bd8c-2cd78e2268e4")
-		)
-		(pin "2"
-			(uuid "19edf04d-629d-4762-bef7-cbc73e0a2e0a")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 386.08 165.1 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f9c18044-9df9-43dc-a0bf-42842cebf630")
-		(property "Reference" "R8"
-			(at 386.08 162.56 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220R"
-			(at 386.08 165.1 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 386.08 166.87800000000001 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 386.08 165.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 386.08 165.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7ebe48c5-bd94-4cae-b35e-b2fd88633744")
-		)
-		(pin "2"
-			(uuid "6c3d6009-65bd-46d4-a486-ea38017b36cf")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 386.08 170.18 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "79e00ab0-62ec-4bb8-9495-a0893478eb0d")
-		(property "Reference" "R9"
-			(at 386.08 167.64 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220R"
-			(at 386.08 170.18 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 386.08 171.958 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 386.08 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 386.08 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "77c199ad-7190-4406-ad60-a590b4963f84")
-		)
-		(pin "2"
-			(uuid "48fb0215-df3b-4d20-98f0-79aa8cfe3681")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 386.08 175.26 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1840cc93-02aa-4099-bce8-e09b1a5365e7")
-		(property "Reference" "R10"
-			(at 386.08 172.72 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220R"
-			(at 386.08 175.26 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 386.08 177.03799999999998 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 386.08 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 386.08 175.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "45c0a207-1b30-439a-917c-fd7cb038d831")
-		)
-		(pin "2"
-			(uuid "fb6091eb-ee58-4b5d-b976-e48cdba79394")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 386.08 180.34 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "adf11b74-3bb1-4b44-9939-1035708a3685")
-		(property "Reference" "R11"
-			(at 386.08 177.8 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220R"
-			(at 386.08 180.34 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 386.08 182.11800000000002 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 386.08 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 386.08 180.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7f92f0c8-a03e-4fbd-9ff3-b63d36dc868d")
-		)
-		(pin "2"
-			(uuid "3273de9f-8de9-434f-8130-2ec9ab16516d")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 386.08 185.42 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0f989abc-71bd-44a8-8876-123e5d3f4ed1")
-		(property "Reference" "R12"
-			(at 386.08 182.88 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220R"
-			(at 386.08 185.42 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 386.08 187.19799999999998 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 386.08 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 386.08 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7d597540-3da2-4422-a222-14e10e82bba5")
-		)
-		(pin "2"
-			(uuid "f2a98a32-ef81-4ca3-9f8f-19b43146ae60")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 386.08 190.5 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4120c507-ae54-4e79-a61b-fb9a7adf88fb")
-		(property "Reference" "R13"
-			(at 386.08 187.96 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "220R"
-			(at 386.08 190.5 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 386.08 192.278 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 386.08 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 386.08 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8446e00f-4a56-40fb-9f68-1378880b47ed")
-		)
-		(pin "2"
-			(uuid "40efc751-3e1e-45f0-a2ce-48709bc23d89")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 320.04 167.64 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "149a44fa-fce4-4877-b68d-3c72f488d572")
-		(property "Reference" "R14"
-			(at 320.04 165.1 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100R"
-			(at 320.04 167.64 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 320.04 169.418 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 320.04 167.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 320.04 167.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "902ed553-3252-4fa7-b215-ee0a65fbc54b")
-		)
-		(pin "2"
-			(uuid "18dfbf9c-68a0-4764-8e71-68496d537143")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 320.04 172.72 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c1604f8b-eea0-4cc5-8824-070012a89bf4")
-		(property "Reference" "R15"
-			(at 320.04 170.18 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100R"
-			(at 320.04 172.72 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 320.04 174.498 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 320.04 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 320.04 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "73d2a03c-9720-4ab7-836f-2374127f9a3a")
-		)
-		(pin "2"
-			(uuid "a1686a69-8e27-4375-a1ff-ad47be6d6e89")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 320.04 177.8 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "df3e7825-8b43-4e3d-b089-071828ca388f")
-		(property "Reference" "R16"
-			(at 320.04 175.26 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100R"
-			(at 320.04 177.8 270)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 320.04 179.578 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 320.04 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 320.04 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7b49255c-fae2-470b-a5c8-54377d8fbe39")
-		)
-		(pin "2"
-			(uuid "32e47734-b727-443e-87d2-047d8419286d")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -5938,7 +5426,7 @@
 		)
 		(uuid "58765bf6-2538-4315-99be-1373c95d39cc")
 	)
-	(label "+3V3"
+	(label "+3V"
 		(at 147.32 30.48 0)
 		(effects
 			(font
@@ -5958,7 +5446,7 @@
 		)
 		(uuid "89e3370b-fd8c-46f1-8465-9c7ddd02c143")
 	)
-	(label "+3V3"
+	(label "+3V"
 		(at 162.56 34.29 90)
 		(effects
 			(font
@@ -5978,7 +5466,7 @@
 		)
 		(uuid "d6c16b69-2a15-4e47-92ef-20718ec95e74")
 	)
-	(label "+3V3"
+	(label "+3V"
 		(at 182.88 34.29 90)
 		(effects
 			(font
@@ -5998,7 +5486,7 @@
 		)
 		(uuid "d25fa2bf-2f49-4ddc-a079-07e15a9db22d")
 	)
-	(label "+3V3"
+	(label "+3V"
 		(at 193.04 34.29 90)
 		(effects
 			(font
@@ -6178,7 +5666,7 @@
 		)
 		(uuid "918a9a2c-30d4-4857-866b-44041db6b048")
 	)
-	(label "+3V3"
+	(label "+3V"
 		(at 162.56 82.55 90)
 		(effects
 			(font
@@ -6188,7 +5676,7 @@
 		)
 		(uuid "17f4f1e4-778a-4227-b28a-86bb4098403b")
 	)
-	(label "+3V3"
+	(label "+3V"
 		(at 185.42 95.25 90)
 		(effects
 			(font
@@ -6218,7 +5706,7 @@
 		)
 		(uuid "7571b8ef-5c05-4e71-bbff-64d2977c813a")
 	)
-	(label "D2"
+	(label "LCD_COM1"
 		(at 226.06 101.60000000000001 180)
 		(effects
 			(font
@@ -6228,7 +5716,7 @@
 		)
 		(uuid "1fd4d1f0-fed6-4403-bb56-8a3c461b1cbe")
 	)
-	(label "D3"
+	(label "LCD_COM2"
 		(at 226.06 104.14 180)
 		(effects
 			(font
@@ -6238,7 +5726,7 @@
 		)
 		(uuid "826daf21-c395-444b-9c42-3366d97d0055")
 	)
-	(label "D4"
+	(label "LCD_COM3"
 		(at 226.06 106.68 180)
 		(effects
 			(font
@@ -6258,7 +5746,7 @@
 		)
 		(uuid "aed61116-c998-4568-8759-aa5e5ba71836")
 	)
-	(label "D6"
+	(label "LCD_COM4"
 		(at 226.06 111.76 180)
 		(effects
 			(font
@@ -6268,7 +5756,7 @@
 		)
 		(uuid "eebed15f-5a36-492a-8414-23f1bdaeb747")
 	)
-	(label "D7"
+	(label "LCD_SEG1"
 		(at 226.06 114.30000000000001 180)
 		(effects
 			(font
@@ -6278,7 +5766,7 @@
 		)
 		(uuid "8fe94be8-7c57-4bbf-afe1-478bc440549d")
 	)
-	(label "D8"
+	(label "LCD_SEG2"
 		(at 226.06 116.84 180)
 		(effects
 			(font
@@ -6288,7 +5776,7 @@
 		)
 		(uuid "9a3b8396-2e62-435b-a2b6-1df4da53491b")
 	)
-	(label "D9"
+	(label "LCD_SEG3"
 		(at 226.06 119.38000000000001 180)
 		(effects
 			(font
@@ -6298,7 +5786,7 @@
 		)
 		(uuid "3a164795-9747-45a2-b5f0-1eab31e152a0")
 	)
-	(label "D10"
+	(label "LCD_SEG4"
 		(at 256.54 119.38000000000001 0)
 		(effects
 			(font
@@ -6308,7 +5796,7 @@
 		)
 		(uuid "fabbb50d-0b14-4fd0-b90d-37cee849924a")
 	)
-	(label "D11"
+	(label "LCD_SEG5"
 		(at 256.54 116.84 0)
 		(effects
 			(font
@@ -6318,7 +5806,7 @@
 		)
 		(uuid "a23b8967-88a5-4950-bc54-7a99faf2a793")
 	)
-	(label "D12"
+	(label "LCD_SEG6"
 		(at 256.54 114.30000000000001 0)
 		(effects
 			(font
@@ -6328,7 +5816,7 @@
 		)
 		(uuid "d62c6dc7-50de-4422-a1e7-d1b85940a613")
 	)
-	(label "+3V3"
+	(label "+3V"
 		(at 256.54 99.06 0)
 		(effects
 			(font
@@ -6347,76 +5835,6 @@
 			(justify left bottom)
 		)
 		(uuid "e00661a4-0541-4b59-b47d-491c4eda04bb")
-	)
-	(label "D2"
-		(at 389.89 160.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "20b5346c-5c9e-4ce6-80c2-2bbabc29e2c2")
-	)
-	(label "D3"
-		(at 389.89 165.1 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "75981ab6-96c9-4c68-8ce4-444a9c0f39a3")
-	)
-	(label "D4"
-		(at 389.89 170.18 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "92fb477b-8f01-47e9-bcbe-3c57d15436ac")
-	)
-	(label "D8"
-		(at 389.89 185.42 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "28f45666-3ddd-4e38-b133-1bb611a932ce")
-	)
-	(label "D9"
-		(at 389.89 190.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d0a72c50-4336-47af-9e96-c3673767cc43")
-	)
-	(label "D10"
-		(at 316.23 167.64 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "80bfd708-d076-4db5-a903-a71e7efe98a9")
-	)
-	(label "D12"
-		(at 316.23 177.8 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "849dbad4-a5b4-42f5-be71-6c22297d59ec")
 	)
 	(no_connect
 		(at 99.06 111.76)
@@ -6470,137 +5888,7 @@
 		(at 243.84 129.54000000000002)
 		(uuid "e0097ddb-44a8-4aa7-8d36-1c13bea72227")
 	)
-	(label "D6"
-		(at 389.89 175.26 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "891cb09b-c2a5-496d-a89e-41b8d39e7785")
-	)
-	(label "D7"
-		(at 389.89 180.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "70dbe7f8-07e8-421a-b7b0-a36f038f6125")
-	)
-	(label "D11"
-		(at 316.23 172.72 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7716dd2b-afe3-4712-bf2c-4efe525642f4")
-	)
-	(wire
-		(pts
-			(xy 365.76 160.01999999999998) (xy 382.27 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "72739703-cc20-4af6-9bee-90b36f7830c0")
-	)
-	(wire
-		(pts
-			(xy 365.76 165.1) (xy 382.27 165.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d762722-d447-4256-9112-17d05c175384")
-	)
-	(wire
-		(pts
-			(xy 365.76 170.17999999999998) (xy 382.27 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed3cc836-de30-4173-b8f1-aa5204112fbd")
-	)
-	(wire
-		(pts
-			(xy 365.76 175.26) (xy 382.27 175.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "77d92804-25ca-4cf4-9d15-67fb8b76fbe3")
-	)
-	(wire
-		(pts
-			(xy 365.76 180.34) (xy 382.27 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "10b89737-bdf7-4762-b0b4-1e7471e13f95")
-	)
-	(wire
-		(pts
-			(xy 365.76 185.42) (xy 382.27 185.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cbe8ce64-8365-40cb-b4cf-640dde06dc4f")
-	)
-	(wire
-		(pts
-			(xy 365.76 190.5) (xy 382.27 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8deaa99-e688-40db-9d1b-dcc82980a9ab")
-	)
-	(wire
-		(pts
-			(xy 323.85 167.64) (xy 335.28 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05445ebe-0405-478b-89f5-3c5e18aae99d")
-	)
-	(wire
-		(pts
-			(xy 323.85 172.72) (xy 335.28 172.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f859d491-7084-45b6-ad1c-71e6b50b16bc")
-	)
-	(wire
-		(pts
-			(xy 323.85 177.8) (xy 335.28 177.79999999999998)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c12017f-4b10-4a40-965e-e9bfadf86b42")
-	)
-	(text "ALIMENTATION  12V -> 5V -> 3V3"
+	(text "ALIMENTATION  12V -> 5V -> 3V"
 		(exclude_from_sim no)
 		(at 25.4 17.78 0)
 		(effects
@@ -6624,7 +5912,7 @@
 		)
 		(uuid "16dc25f4-3392-430f-aa81-99c5ba860c75")
 	)
-	(text "MISE EN FORME 3V3 -> D5"
+	(text "MISE EN FORME 3V -> D5"
 		(exclude_from_sim no)
 		(at 121.92 76.2 0)
 		(effects
@@ -6636,7 +5924,7 @@
 		)
 		(uuid "b1c0cbb7-5143-490a-8976-5f76df211d8e")
 	)
-	(text "ARDUINO PRO MINI 3V3 / 8 MHz"
+	(text "ARDUINO PRO MINI (alimente en 3V)"
 		(exclude_from_sim no)
 		(at 218.44 83.82 0)
 		(effects
@@ -6648,7 +5936,7 @@
 		)
 		(uuid "962476b4-2625-4298-a20e-bf77f12eb4f7")
 	)
-	(text "AFFICHEUR 3 DIGITS MULTIPLEXE (cathode commune)"
+	(text "AFFICHEUR LCD 3 DIGITS TN  (1/4 duty, 1/2 bias, 3V)"
 		(exclude_from_sim no)
 		(at 309.88 144.78 0)
 		(effects
@@ -6660,9 +5948,9 @@
 		)
 		(uuid "90a62981-1ab4-4093-a75b-261f92be89f4")
 	)
-	(text "R7..R13 -> segments A..G     R14..R16 -> digits DIG1..DIG3"
+	(text "R7..R16 : polarisation a mi-tension.\nBroche Arduino en haute impedance = 1,5 V, sinon 0 ou 3 V."
 		(exclude_from_sim no)
-		(at 309.88 200.66 0)
+		(at 330.2 200.66 0)
 		(effects
 			(font
 				(size 1.8 1.8)
@@ -6682,9 +5970,9 @@
 		)
 		(uuid "30b5bcc6-942a-4b07-80b7-9e8eb0fe3d5e")
 	)
-	(text "DS1 : numeros de broches a verifier sur la datasheet de l afficheur reel"
+	(text "R17/R18/C12 : reference VLCD_MID = 3V/2.\nJ4 : nappe 10 conducteurs vers le LCD deporte."
 		(exclude_from_sim no)
-		(at 309.88 205.74 0)
+		(at 330.2 210.82 0)
 		(effects
 			(font
 				(size 1.8 1.8)
@@ -6784,6 +6072,1729 @@
 			(justify right bottom)
 		)
 		(uuid "1a85b053-9f4a-4a5b-92cc-0f0a981fded3")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 152.4 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e87dad8a-e368-497f-9109-ac8504330a08")
+		(property "Reference" "R7"
+			(at 297.18 149.86 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 152.4 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 154.178 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "def738f1-cade-4226-85c2-8e25faaa0d31")
+		)
+		(pin "2"
+			(uuid "80915956-3afc-4a1d-9e8f-900212d58880")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 157.48 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "218506b1-f07c-4efb-b418-a393c4095ebe")
+		(property "Reference" "R8"
+			(at 297.18 154.94 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 157.48 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 159.258 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5ef99818-3a42-46a1-813e-fe6ae9790c97")
+		)
+		(pin "2"
+			(uuid "743f4960-975e-4fae-856d-93232e167b05")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 162.56 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c0b3fd84-cf7e-4c08-b741-69fd360d8af6")
+		(property "Reference" "R9"
+			(at 297.18 160.02 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 162.56 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 164.338 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 162.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 162.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "92c2ff7f-a716-46fb-af6c-8a24c74fa58b")
+		)
+		(pin "2"
+			(uuid "cf724f2d-8187-48ad-9887-1936ce096706")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 167.64 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "aaf38af2-edfc-4528-8b04-4871031f338b")
+		(property "Reference" "R10"
+			(at 297.18 165.1 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 167.64 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 169.418 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f925195c-3211-4f30-8785-ae9ccd52bfae")
+		)
+		(pin "2"
+			(uuid "583f2e61-6495-4ca1-ad68-f393490d9764")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 172.72 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7cfd9c82-9358-4a14-90fa-09aa9039276d")
+		(property "Reference" "R11"
+			(at 297.18 170.18 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 172.72 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 174.498 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "06b2e42a-7ec4-4674-a4b3-efd978cc3dde")
+		)
+		(pin "2"
+			(uuid "a602440b-ef96-4e8f-a5e9-664c7e4df536")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 177.8 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fef63bf5-8ecb-426c-9962-86ab7af8b610")
+		(property "Reference" "R12"
+			(at 297.18 175.26 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 177.8 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 179.578 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a58462c5-ff6d-4972-9bbe-7f43b829250a")
+		)
+		(pin "2"
+			(uuid "0c0ee1d0-7398-460e-965f-626412cee2d4")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 182.88 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "12dff9da-59ee-4a43-ae44-fabdbc0a0e6d")
+		(property "Reference" "R13"
+			(at 297.18 180.34 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 182.88 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 184.658 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e7e2651e-496d-47e4-a61d-59f90d03794b")
+		)
+		(pin "2"
+			(uuid "86a36deb-27e6-476f-bad8-d1582c8dab85")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 187.96 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "473d7f17-5074-4351-84b4-fd926b74d566")
+		(property "Reference" "R14"
+			(at 297.18 185.42 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 187.96 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 189.738 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "462a9a97-0d05-443e-b13e-6967452899fe")
+		)
+		(pin "2"
+			(uuid "dc4246ed-2555-4e48-87eb-f50c0a4f8025")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 193.04 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c427e246-1727-4f3d-b5b3-97457f90fab6")
+		(property "Reference" "R15"
+			(at 297.18 190.5 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 193.04 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 194.818 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cfd8e406-740b-41db-be84-6eb094bccb32")
+		)
+		(pin "2"
+			(uuid "714b2198-b492-4bbb-9a2a-876414a778e2")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 198.12 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "60906700-1891-4eed-ae75-3107cd29629c")
+		(property "Reference" "R16"
+			(at 297.18 195.58 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 297.18 198.12 270)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 297.18 199.898 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e86be08d-76fc-420d-9660-c74914e4dfcd")
+		)
+		(pin "2"
+			(uuid "564e80fc-4468-4f9d-9b37-dd09311b0424")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 208.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fdfdbccb-9b12-43b7-880c-8dc01e23aadd")
+		(property "Reference" "R17"
+			(at 294.64 208.28 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 297.18 208.28 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 295.402 208.28 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 208.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "efcccbfd-35a2-4229-8b56-6fe26f95b772")
+		)
+		(pin "2"
+			(uuid "ef0b79cd-ef23-4897-a274-0e09c77d4bf4")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 220.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "58b7cb75-b3ae-4a1b-be5a-b3de05d1e923")
+		(property "Reference" "R18"
+			(at 294.64 220.98 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 297.18 220.98 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 295.402 220.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 297.18 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4f1f2ae8-0b39-41fe-87df-b6cc58735365")
+		)
+		(pin "2"
+			(uuid "88f193a4-72eb-4f46-b6c3-37a95ae45a05")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 309.88 220.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "46fc9f6d-be89-4f2b-9393-25a332f34e85")
+		(property "Reference" "C12"
+			(at 311.15 222.885 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 308.61 222.885 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 310.845 217.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 309.88 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 309.88 220.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0ea6b7af-ac47-42f5-a1e8-5763f0cbb03a")
+		)
+		(pin "2"
+			(uuid "f0328ee9-9f7a-455e-afca-8a2484e1d347")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x10")
+		(at 340.36 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "da4afb16-7f98-481e-a3ff-8b0cf0288aac")
+		(property "Reference" "J4"
+			(at 340.36 158.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LCD"
+			(at 340.36 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_SH_SM10B-SRSS-TB_1x10-1MP_P1.00mm_Horizontal"
+			(at 340.36 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 340.36 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 340.36 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d4870850-2434-4929-bbc4-df15d8641e0e")
+		)
+		(pin "10"
+			(uuid "4a3cd645-8c2a-4043-ba8f-ea54c85ab2dc")
+		)
+		(pin "2"
+			(uuid "b5195709-ffd2-4ef4-8322-211fed15683d")
+		)
+		(pin "3"
+			(uuid "c2eb9995-f8ae-442e-806a-777cfcf0788f")
+		)
+		(pin "4"
+			(uuid "77c58d41-ce9e-49f3-8769-b2c9ccbb41e1")
+		)
+		(pin "5"
+			(uuid "371ab9d1-1298-4213-bed1-5bf2e31b329f")
+		)
+		(pin "6"
+			(uuid "a5229d6b-4fc4-47fd-97a1-9cea24f9f19f")
+		)
+		(pin "7"
+			(uuid "32440160-e915-4408-9d7c-c1a87bc467ef")
+		)
+		(pin "8"
+			(uuid "5b8e69bc-66b6-473c-80bd-5364e6723de2")
+		)
+		(pin "9"
+			(uuid "d8da62c8-d27b-404f-af2d-f54fea6b12d3")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "IC202:LCD_3DIGIT_TN_10PIN")
+		(at 388.62 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f4307f8f-5010-4c42-9ee2-fa72bec20e97")
+		(property "Reference" "DS1"
+			(at 388.62 173.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LCD 3 digits TN"
+			(at 388.62 176.53 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 388.62 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://fr.aliexpress.com/item/1005003745628043.html"
+			(at 388.62 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Afficheur LCD TN 3 digits 7 segments, 10 broches, multiplexe 1/4 duty 1/2 bias, 3.0V. Repartition COM/SEG a confirmer aupres du fournisseur."
+			(at 388.62 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "82fee174-6b8c-4978-9d3b-c54ac8d16c4f")
+		)
+		(pin "10"
+			(uuid "157850a8-089d-49a5-9475-93d6a4196411")
+		)
+		(pin "2"
+			(uuid "565d4376-2c17-44d7-a62b-1e2666a30b76")
+		)
+		(pin "3"
+			(uuid "e4093831-264e-41c4-b306-46a73b2840be")
+		)
+		(pin "4"
+			(uuid "5588c8c9-99c2-4395-b01f-cc10cfd02442")
+		)
+		(pin "5"
+			(uuid "af56da6f-35d0-46f9-b7a6-17d040ecbd29")
+		)
+		(pin "6"
+			(uuid "8910036c-6ba8-423c-8030-48d3ac4c1961")
+		)
+		(pin "7"
+			(uuid "603c3f4b-2c05-4d54-82e5-6f19d2745d4b")
+		)
+		(pin "8"
+			(uuid "9e079c94-2a0e-414b-8205-2792426850cd")
+		)
+		(pin "9"
+			(uuid "88ce7159-5e49-4383-a065-a29972c63359")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "DS1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 297.18 212.09) (xy 297.18 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89a1a847-5cd4-420c-a8eb-0ff44af3e85f")
+	)
+	(label "LCD_COM1"
+		(at 293.37 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a58ebfd9-b4e7-434f-b7d0-d77b90ac9505")
+	)
+	(label "VLCD_MID"
+		(at 300.99 152.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fad34aca-3631-4e15-a8bf-80dd477a634f")
+	)
+	(label "LCD_COM2"
+		(at 293.37 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e9c1a36d-e621-48fa-8116-a01262746565")
+	)
+	(label "VLCD_MID"
+		(at 300.99 157.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "568fc6cf-31d1-4ebb-9e01-236b08f2f960")
+	)
+	(label "LCD_COM3"
+		(at 293.37 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "557b3b4d-7828-47c0-b0d1-53e6e70739f6")
+	)
+	(label "VLCD_MID"
+		(at 300.99 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f668e4a4-b14c-45a1-914a-f20f5a37e798")
+	)
+	(label "LCD_COM4"
+		(at 293.37 167.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b3fc9b72-93f5-475a-8c16-d122de189484")
+	)
+	(label "VLCD_MID"
+		(at 300.99 167.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b43844a-63cb-4820-b182-0aba6f89d2b6")
+	)
+	(label "LCD_SEG1"
+		(at 293.37 172.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "494c4649-8767-45bc-9e81-0b4c5a1be448")
+	)
+	(label "VLCD_MID"
+		(at 300.99 172.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7dbd106d-9e25-4feb-8b0c-c702c03c2481")
+	)
+	(label "LCD_SEG2"
+		(at 293.37 177.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e3d4b9cc-ec0d-4415-a145-60438b2cf8d8")
+	)
+	(label "VLCD_MID"
+		(at 300.99 177.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "340e80c0-2301-4083-9beb-105b20151ae6")
+	)
+	(label "LCD_SEG3"
+		(at 293.37 182.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "32800e10-4419-4470-a73f-fd9cb36b468f")
+	)
+	(label "VLCD_MID"
+		(at 300.99 182.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "58f54559-2b22-4474-b7cd-d10cb424cb11")
+	)
+	(label "LCD_SEG4"
+		(at 293.37 187.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d6063554-e062-4896-ac3f-f8bf65d7fcd9")
+	)
+	(label "VLCD_MID"
+		(at 300.99 187.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "23ff82fc-d7cf-4000-810b-be0aa97abe3d")
+	)
+	(label "LCD_SEG5"
+		(at 293.37 193.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cd258552-e446-43b2-97b6-ed4b77f8af29")
+	)
+	(label "VLCD_MID"
+		(at 300.99 193.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "706e88ee-3404-4360-b13b-994ee5da2ece")
+	)
+	(label "LCD_SEG6"
+		(at 293.37 198.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c238db92-108a-4008-ad0b-a22115026d48")
+	)
+	(label "VLCD_MID"
+		(at 300.99 198.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "955d3831-9ceb-47af-b1b4-c9518d982cc8")
+	)
+	(label "+3V"
+		(at 297.18 204.47 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "58f0ed50-aed0-46c4-b36d-186c7920badf")
+	)
+	(label "GND"
+		(at 297.18 224.79 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "74132f77-3dc5-41f7-8296-e7b76a678c56")
+	)
+	(junction
+		(at 297.18 212.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c682e8ce-b634-4234-a8d6-beb0f21a20bc")
+	)
+	(label "GND"
+		(at 309.88 224.79 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eec84539-8c45-4648-b3b6-374ac9d74985")
+	)
+	(label "LCD_COM1"
+		(at 335.28000000000003 165.1 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "98e4489c-f659-4648-ba98-7e299dbc0c17")
+	)
+	(label "LCD_COM2"
+		(at 335.28000000000003 167.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0ead212b-95e8-4824-abf5-03c024830d4b")
+	)
+	(label "LCD_COM3"
+		(at 335.28000000000003 170.17999999999998 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cd3f3d4f-8225-4857-9116-1428019ff33a")
+	)
+	(label "LCD_COM4"
+		(at 335.28000000000003 172.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "31174363-11b5-4f6a-8f32-481c5200b58e")
+	)
+	(label "LCD_SEG1"
+		(at 335.28000000000003 175.26 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e125585a-1340-490a-ad19-b4aefb456fb6")
+	)
+	(label "LCD_SEG2"
+		(at 335.28000000000003 177.79999999999998 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bd8be5fc-0f97-4201-b882-c13a6d6de39c")
+	)
+	(label "LCD_SEG3"
+		(at 335.28000000000003 180.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bbc6decf-f629-484a-b49d-e5182b46a795")
+	)
+	(label "LCD_SEG4"
+		(at 335.28000000000003 182.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "08c4d2f5-dcf4-4225-bbaf-2925be5bb208")
+	)
+	(label "LCD_SEG5"
+		(at 335.28000000000003 185.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "95bef7e2-fc33-4bbf-b0df-1d46ff5fa002")
+	)
+	(label "LCD_SEG6"
+		(at 335.28000000000003 187.95999999999998 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8d70861c-2820-4a6c-bb8a-af12c8a1e1fa")
+	)
+	(label "LCD_COM1"
+		(at 370.84000000000003 163.82999999999998 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "695a5fa2-c41a-4382-902b-0056a5e7ad3d")
+	)
+	(label "LCD_COM2"
+		(at 370.84000000000003 166.37 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fd4f33ec-9603-45cf-a25b-730b427cdb5b")
+	)
+	(label "LCD_COM3"
+		(at 370.84000000000003 168.91 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "31171dfa-41b5-4e53-9f3a-11ffaa4c95b1")
+	)
+	(label "LCD_COM4"
+		(at 370.84000000000003 171.45 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "847f6aaa-7b1e-4b05-ad8b-b0410d52103c")
+	)
+	(label "LCD_SEG1"
+		(at 370.84000000000003 176.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "022e8204-27aa-4a8c-b561-ec1b4029c6ac")
+	)
+	(label "LCD_SEG2"
+		(at 370.84000000000003 179.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "eec12206-940f-487d-b479-887c5669c610")
+	)
+	(label "LCD_SEG3"
+		(at 370.84000000000003 181.60999999999999 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ad80b7d2-73ea-49b1-854b-a5f8a1506058")
+	)
+	(label "LCD_SEG4"
+		(at 370.84000000000003 184.14999999999998 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "631af89d-24e6-4f7f-958d-bf45cb340c3b")
+	)
+	(label "LCD_SEG5"
+		(at 370.84000000000003 186.69 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c948c5aa-409e-4410-ad79-7320d2a61ed7")
+	)
+	(label "LCD_SEG6"
+		(at 370.84000000000003 189.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "855c251c-7030-4e79-8f32-e2f9504c7138")
+	)
+	(label "VLCD_MID"
+		(at 309.88 217.17 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6475f94b-08f0-421e-9366-aa49135b8561")
+	)
+	(wire
+		(pts
+			(xy 297.18 212.09) (xy 289.56 212.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2cf2cf0-0dca-4b28-9ac5-6c80d4952b6d")
+	)
+	(label "VLCD_MID"
+		(at 289.56 212.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f44c8cf2-2c54-40ab-85e4-c48cda96566c")
 	)
 	(sheet_instances
 		(path "/"

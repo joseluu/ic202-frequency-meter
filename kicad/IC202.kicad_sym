@@ -460,7 +460,7 @@
       )
     )
   )
-  (symbol "7SEG_3DIGIT_CC"
+  (symbol "LCD_3DIGIT_TN_10PIN"
     (pin_names
       (offset 1.016)
       (hide yes)
@@ -474,7 +474,7 @@
         (font (size 1.27 1.27))
       )
     )
-    (property "Value" "7SEG_3DIGIT_CC"
+    (property "Value" "LCD_3DIGIT_TN_10PIN"
       (at 0 -2.54 0)
       (effects
         (font (size 1.27 1.27))
@@ -487,110 +487,40 @@
       )
       (hide yes)
     )
-    (property "Datasheet" "~"
+    (property "Datasheet" "https://fr.aliexpress.com/item/1005003745628043.html"
       (at 0 -7.62 0)
       (effects
         (font (size 1.27 1.27))
       )
       (hide yes)
     )
-    (property "Description" "3-digit multiplexed 7-segment LED display, common cathode, 10 pins (no decimal point). VERIFY pin numbers against the actual part datasheet."
+    (property "Description" "Afficheur LCD TN 3 digits 7 segments, 10 broches, multiplexe 1/4 duty 1/2 bias, 3.0V. Repartition COM/SEG a confirmer aupres du fournisseur."
       (at 0 -10.16 0)
       (effects
         (font (size 1.27 1.27))
       )
       (hide yes)
     )
-    (property "ki_keywords" "display 7segment led multiplexed 3 digit common cathode"
+    (property "ki_keywords" "LCD TN 3 digit 7 segment multiplex 1/4 duty 1/2 bias 3V"
       (at 0 0 0)
       (effects
         (font (size 1.27 1.27))
       )
       (hide yes)
     )
-    (symbol "7SEG_3DIGIT_CC_0_1"
+    (symbol "LCD_3DIGIT_TN_10PIN_0_1"
       (rectangle
-        (start -10.16 20.32)
-        (end 10.16 -20.32)
+        (start -12.7 15.24)
+        (end 12.7 -15.24)
         (stroke (width 0.254) (type default))
         (fill (type background))
       )
     )
-    (symbol "7SEG_3DIGIT_CC_1_1"
+    (symbol "LCD_3DIGIT_TN_10PIN_1_1"
       (pin passive line
-        (at -15.24 7.62 0)
+        (at -17.78 11.43 0)
         (length 5.08)
-        (name "DIG1"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "8"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin passive line
-        (at -15.24 2.54 0)
-        (length 5.08)
-        (name "DIG2"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "6"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin passive line
-        (at -15.24 -2.54 0)
-        (length 5.08)
-        (name "DIG3"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "4"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin passive line
-        (at 15.24 15.24 180)
-        (length 5.08)
-        (name "A"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "10"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin passive line
-        (at 15.24 10.16 180)
-        (length 5.08)
-        (name "B"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "7"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin passive line
-        (at 15.24 5.08 180)
-        (length 5.08)
-        (name "C"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "3"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin passive line
-        (at 15.24 0 180)
-        (length 5.08)
-        (name "D"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "2"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin passive line
-        (at 15.24 -5.08 180)
-        (length 5.08)
-        (name "E"
+        (name "COM1"
           (effects (font (size 1.27 1.27)))
         )
         (number "1"
@@ -598,9 +528,79 @@
         )
       )
       (pin passive line
-        (at 15.24 -10.16 180)
+        (at -17.78 8.89 0)
         (length 5.08)
-        (name "F"
+        (name "COM2"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "2"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at -17.78 6.35 0)
+        (length 5.08)
+        (name "COM3"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "3"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at -17.78 3.81 0)
+        (length 5.08)
+        (name "COM4"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "4"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at -17.78 -1.27 0)
+        (length 5.08)
+        (name "SEG1"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "5"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at -17.78 -3.81 0)
+        (length 5.08)
+        (name "SEG2"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "6"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at -17.78 -6.35 0)
+        (length 5.08)
+        (name "SEG3"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "7"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at -17.78 -8.89 0)
+        (length 5.08)
+        (name "SEG4"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "8"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at -17.78 -11.43 0)
+        (length 5.08)
+        (name "SEG5"
           (effects (font (size 1.27 1.27)))
         )
         (number "9"
@@ -608,12 +608,12 @@
         )
       )
       (pin passive line
-        (at 15.24 -15.24 180)
+        (at -17.78 -13.97 0)
         (length 5.08)
-        (name "G"
+        (name "SEG6"
           (effects (font (size 1.27 1.27)))
         )
-        (number "5"
+        (number "10"
           (effects (font (size 1.27 1.27)))
         )
       )

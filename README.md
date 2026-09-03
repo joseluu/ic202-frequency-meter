@@ -4,8 +4,8 @@ Projet KiCad transcrit du schéma manuscrit `docs/Schema.jpg`, selon la descript
 de `docs/specifications.md`.
 
 Chaîne de mesure : entrée RF → prédiviseur MB506 → étage de mise en forme à
-transistor alimenté en 3,3 V → broche D5 d'un Arduino Pro Mini → afficheur
-3 digits 7 segments multiplexé.
+transistor alimenté en 3 V → broche D5 d'un Arduino Pro Mini → afficheur LCD
+3 digits 7 segments multiplexé, déporté au bout d'une nappe.
 
 ## Contenu
 
@@ -22,15 +22,10 @@ transistor alimenté en 3,3 V → broche D5 d'un Arduino Pro Mini → afficheur
 
 ## État de vérification
 
-- ERC : **0 erreur**.
-- Netlist vérifiée pin à pin par export `kicadxml`, identique à la netlist de
-  référence après chaque retouche cosmétique.
+- ERC : **0 erreur, 0 avertissement**.
+- Netlist vérifiée broche à broche par export `kicadxml` après chaque retouche.
 - `check_label_rotations.py` et `check_symbol_overlap.py` : OK.
 - `lint_offgrid` : aucune coordonnée hors grille 1,27 mm.
-- Reste un avertissement `lib_symbol_mismatch` sur `DS1`. Les deux définitions
-  sont sémantiquement identiques (diff effectué). C'est l'avertissement
-  cosmétique connu de KiCad sur une bibliothèque locale au projet, sans effet
-  sur la netlist.
 
 ## Organisation du schéma
 
@@ -59,8 +54,8 @@ python check_symbol_overlap.py   .../ic202-frequencemetre.kicad_sch   # OK
   inverse l'ordre des broches sans déplacer la broche de signal.
 - **Signaux de gauche à droite** : entrée RF à gauche, progression vers
   l'Arduino puis l'afficheur à droite.
-- **Étiquettes réservées aux signaux utiles** : rails, RF_IN, SW1/SW2, D5_SIG
-  et les lignes D2..D12 vers l'afficheur.
+- **Étiquettes réservées aux signaux utiles** : rails, RF_IN, SW1/SW2, D5_SIG,
+  VLCD_MID et les dix lignes LCD_COM/LCD_SEG.
 - **Aucun chevauchement de symboles.**
 
 ### Placement des repères et valeurs
@@ -112,12 +107,14 @@ C'est le cas des repères de `R7`..`R16`.
 
 ### Alimentation
 
-`J1` (+12 V) → `U1` L7805 → +5 V → `U2` LM317L → +3,3 V.
+`J1` (+12 V) → `U1` L7805 → +5 V → `U2` LM317L → +3 V.
 Découplage 100 nF + 10 µF sur chacun des trois rails.
 
-Le +3,3 V est réglé par `R1` (100 R, VO→ADJ) et `R2` (160 R, ADJ→GND) :
+Le +3 V est réglé par `R1` (100 R, VO→ADJ) et `R2` (140 R, ADJ→GND) :
 
-    Vout = 1,25 x (1 + 160/100) = 3,25 V
+    Vout = 1,25 x (1 + 140/100) = 3,00 V
+
+C'est la tension de service du LCD, indiquée sur sa fiche.
 
 `#FLG01` et `#FLG02` sont les PWR_FLAG des rails +12 V et GND, qui ne sont
 alimentés que par un connecteur.
@@ -146,22 +143,67 @@ Sans cavalier, le montage divise par 256.
 
 Sortie ECL du MB506 → `C10` 100 nF → `R4` 1 k → base de `Q1` (2N2369).
 `R5` 100 k ramène la base à la masse, émetteur à la masse, collecteur tiré au
-+3,3 V par `R6` 1 k. Le collecteur attaque D5. Le niveau logique vu par
-l'Arduino est donc bien du 3,3 V, d'où la présence du régulateur LM317L.
++3 V par `R6` 1 k. Le collecteur attaque D5. Le niveau logique vu par
+l'Arduino est donc bien du 3 V, d'où la présence du régulateur LM317L.
 
-### Arduino et afficheur
+### Arduino
 
 L'Arduino Pro Mini est la version **3,3 V / 8 MHz**, alimentée sur sa broche VCC
-depuis le +3,3 V (le régulateur de la carte est contourné, RAW non connectée).
-
-| Broche | Fonction |
-|---|---|
-| D5 | entrée de comptage depuis l'étage transistor |
-| D2, D3, D4, D6, D7, D8, D9 | segments A, B, C, D, E, F, G via `R7`..`R13` (220 R) |
-| D10, D11, D12 | communs DIG1, DIG2, DIG3 via `R14`..`R16` (100 R) |
+depuis le rail +3 V (le régulateur de la carte est contourné, RAW non connectée).
+L'ATmega328P à 8 MHz fonctionne sans réserve jusqu'à 2,7 V.
 
 D13 est laissé libre à cause de la LED intégrée. TXO/RXI restent disponibles
 pour la programmation par le connecteur FTDI de la carte.
+
+### Afficheur LCD
+
+`docs/LCD.png` donne la fiche du composant :
+
+| Caractéristique | Valeur |
+|---|---|
+| Technologie | TN, polariseur réflectif positif |
+| Multiplexage | 1/4 duty, 1/2 bias |
+| Tension de service | 3,0 V |
+| Angle de lecture | 6 heures |
+| Broches | 10, au pas de 2,00 mm |
+
+Référence commerciale :
+<https://fr.aliexpress.com/item/1005003745628043.html>
+
+Le 1/4 duty impose **4 communs**, et les 10 broches se répartissent donc en
+4 communs plus **6 segments**. Cela adresse 4 × 6 = 24 segments, dont 21 pour
+les trois chiffres.
+
+C'est un afficheur à cristaux liquides : il ne consomme aucun courant et ne
+supporte pas de tension continue permanente, qui le détruirait par
+électrolyse. Il n'y a donc **pas de résistance de limitation** ; l'attaque se
+fait en alternatif, par inversion de polarité à chaque trame.
+
+**Attaque en 1/2 bias par tri-état.** Chaque ligne a besoin de trois niveaux :
+0 V, 1,5 V et 3 V. Les broches de l'Arduino en fournissent deux, et le
+troisième vient de la mise en haute impédance : la ligne rejoint alors la
+référence à mi-tension `VLCD_MID` à travers sa résistance de 100 kΩ.
+
+| Élément | Rôle |
+|---|---|
+| `R7`..`R16` (100 kΩ) | une par ligne, vers `VLCD_MID` |
+| `R17`, `R18` (10 kΩ) | pont générant `VLCD_MID` = 3 V / 2 |
+| `C12` (1 µF) | découplage de la référence |
+
+Le pont est dix fois plus raide que les résistances de ligne, pour que la
+référence ne bouge pas quand plusieurs broches commutent.
+
+**Affectation des broches de l'Arduino :**
+
+| Broche | Ligne LCD |
+|---|---|
+| D5 | entrée de comptage depuis l'étage transistor |
+| D2, D3, D4, D6 | COM1, COM2, COM3, COM4 |
+| D7, D8, D9, D10, D11, D12 | SEG1 à SEG6 |
+
+**Liaison par nappe.** Le LCD est déporté au bout d'une nappe de 10
+conducteurs. `J4` représente le connecteur côté carte ; `DS1` est l'afficheur
+à l'autre extrémité.
 
 ## Hypothèses de transcription
 
@@ -170,32 +212,33 @@ Les points suivants ont été déduits ; ils sont à confronter à l'original.
 
 | Élément | Retenu | Raison |
 |---|---|---|
-| `R2` (ADJ→GND du LM317L) | 160 R | Seule valeur E24 donnant ≈3,3 V avec `R1` = 100 R. La lecture directe était ambiguë. |
+| `R2` (ADJ→GND du LM317L) | 140 R | Valeur donnant exactement 3,00 V avec `R1` = 100 R. Hors série E24, à prendre en 1 % (E48). La lecture directe sur la photo était illisible. |
 | `Q1` | 2N2369 | Lecture la plus probable de l'annotation ; transistor de commutation rapide cohérent avec l'usage. Tout NPN rapide équivalent convient. |
 | `R4`, `R5`, `R6` | 1 k, 100 k, 1 k | Valeurs de polarisation usuelles pour cet étage ; chiffres illisibles sur la photo. |
 | `R3` | 51 R | Terminaison 50 Ω d'entrée RF. |
-| `R7`..`R16` | 220 R et 100 R | Le papier montre une résistance sur chacune des 10 lignes. Les valeurs manuscrites se lisaient « 100R » ou « 100K » selon les zones. |
-| Brochage `DS1` | 10 broches, 1..5 en bas, 6..10 en haut | Le papier montre 5 broches par rangée, ce qui correspond à 7 segments + 3 communs, sans point décimal. |
+| `R17`, `R18`, `C12` | 10 kΩ, 10 kΩ, 1 µF | Valeurs usuelles pour une référence à mi-tension : dix fois plus raide que les résistances de ligne, avec un découplage. Les chiffres du papier sont illisibles. |
+| Affectation des 10 broches de `DS1` | 1..4 = COM1..COM4, 5..10 = SEG1..SEG6 | La fiche donne le nombre de broches et le multiplexage, pas leur ordre. **À confirmer avant fabrication.** |
 
-**Point d'attention électrique.** Les communs de digits sont attaqués
-directement par les broches de l'Arduino, comme sur le papier. Avec 7 segments
-allumés simultanément, le courant cumulé dans une broche commune dépasse la
-valeur recommandée pour l'ATmega328P. Si la luminosité obtenue ne convient pas,
-il faut intercaler trois transistors de commutation sur DIG1..DIG3 plutôt que
-de diminuer les résistances de segments.
+Le papier annotait les dix résistances de ligne « 100K », ce qui est cohérent
+avec une polarisation de LCD. Une première transcription les avait ramenées à
+220 Ω en supposant un afficheur à LED : c'était une erreur, corrigée depuis.
 
 ## Ce qui reste à faire
 
-1. **Empreintes de `A1` et `DS1`.** Aucune empreinte standard KiCad ne
-   correspond au Pro Mini ni à un afficheur 3 digits 10 broches. Il faut les
-   créer avant de router la carte.
-2. **Vérifier le brochage réel de l'afficheur** et corriger les numéros de
-   broches du symbole `IC202:7SEG_3DIGIT_CC` si nécessaire. Les noms de
-   fonction (A..G, DIG1..DIG3) sont corrects, seuls les numéros sont supposés.
-3. **Confirmer les valeurs du tableau d'hypothèses** sur le schéma d'origine.
-4. **Implantation et routage** de la carte, encore vide.
-5. **Firmware.** Comptage sur D5, division par 256 à compenser dans le calcul,
-   multiplexage des 3 digits.
+1. **Obtenir la table de correspondance segments du LCD**, c'est-à-dire quel
+   couple (COM, SEG) allume quel segment de quel chiffre. Elle n'est pas dans
+   la fiche et conditionne le firmware. Sans elle, on peut router la carte mais
+   pas afficher un chiffre juste.
+2. **Confirmer l'affectation des 10 broches** en communs et segments.
+3. **Empreintes de `A1` et `DS1`.** Aucune empreinte standard KiCad ne
+   correspond au Pro Mini ni à ce LCD. `J4` utilise pour l'instant une
+   empreinte JST-SH 10 points, à remplacer par celle du connecteur retenu.
+4. **Confirmer les valeurs du tableau d'hypothèses** sur le schéma d'origine.
+5. **Implantation et routage** de la carte, encore vide.
+6. **Firmware.** Comptage sur D5, division par 256 à compenser, puis génération
+   des trames LCD en 1/4 duty et 1/2 bias : chaque broche prend tour à tour
+   l'état haut, bas ou haute impédance, et la polarité s'inverse à chaque trame
+   pour que la tension moyenne sur chaque segment reste nulle.
 
 ## Ouvrir le projet
 
