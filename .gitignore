@@ -1,0 +1,15 @@
+# KiCad - fichiers locaux et sauvegardes
+*.kicad_prl
+*-backups/
+*.bak
+*.kicad_sch-bak
+*.kicad_pcb-bak
+_autosave-*
+fp-info-cache
+
+# Rapports regeneres a la demande
+kicad/erc.rpt
+kicad/*.xml
+
+# Verrous poses par KiCad quand le projet est ouvert
+~*.lck

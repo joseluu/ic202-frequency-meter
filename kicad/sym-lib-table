@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "IC202")(type "KiCad")(uri "${KIPRJMOD}/IC202.kicad_sym")(options "")(descr "Symboles specifiques au frequencemetre IC202"))
+)
