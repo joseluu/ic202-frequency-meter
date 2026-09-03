@@ -1,7 +1,9 @@
 # Fréquencemètre IC-202
 
-Projet KiCad transcrit du schéma manuscrit `docs/Schema.jpg`, selon la description
-de `docs/specifications.md`.
+Projet KiCad transcrit du schéma manuscrit, selon la description de
+`docs/specifications.md`. Deux versions du schéma existent dans `docs/` :
+`Schema.jpg`, la première photo, et `Schema_propre.jpg`, une reprise plus
+lisible qui a servi à corriger plusieurs valeurs mal lues sur la première.
 
 Chaîne de mesure : entrée RF → prédiviseur MB506 → étage de mise en forme à
 transistor alimenté en 3 V → broche D5 d'un Arduino Pro Mini → afficheur LCD
@@ -19,6 +21,8 @@ transistor alimenté en 3 V → broche D5 d'un Arduino Pro Mini → afficheur LC
 | `kicad/ic202-frequencemetre.pdf` / `.svg` | Schéma exporté |
 | `kicad/bom.csv` | Nomenclature |
 | `kicad/erc.rpt` | Rapport ERC |
+| `docs/Schema.jpg`, `docs/Schema_propre.jpg` | Schéma manuscrit d'origine et sa reprise lisible |
+| `docs/LCD.png` | Fiche technique de l'afficheur LCD |
 
 ## État de vérification
 
@@ -54,8 +58,9 @@ python check_symbol_overlap.py   .../ic202-frequencemetre.kicad_sch   # OK
   inverse l'ordre des broches sans déplacer la broche de signal.
 - **Signaux de gauche à droite** : entrée RF à gauche, progression vers
   l'Arduino puis l'afficheur à droite.
-- **Étiquettes réservées aux signaux utiles** : rails, RF_IN, SW1/SW2, D5_SIG,
-  VLCD_MID et les dix lignes LCD_COM/LCD_SEG.
+- **Étiquettes réservées aux signaux utiles** : rails, RF_IN, D5_SIG,
+  VLCD_MID et les dix lignes LCD_COM/LCD_SEG. SW1 et SW2 sont marquées non
+  connectées plutôt qu'étiquetées, faute d'utilité une fois flottantes.
 - **Aucun chevauchement de symboles.**
 
 ### Placement des repères et valeurs
@@ -110,11 +115,11 @@ C'est le cas des repères de `R7`..`R16`.
 `J1` (+12 V) → `U1` L7805 → +5 V → `U2` LM317L → +3 V.
 Découplage 100 nF + 10 µF sur chacun des trois rails.
 
-Le +3 V est réglé par `R1` (100 R, VO→ADJ) et `R2` (140 R, ADJ→GND) :
+Le +3 V est réglé par `R1` (220 R, VO→ADJ) et `R2` (300 R, ADJ→GND) :
 
-    Vout = 1,25 x (1 + 140/100) = 3,00 V
+    Vout = 1,25 x (1 + 300/220) = 2,95 V
 
-C'est la tension de service du LCD, indiquée sur sa fiche.
+C'est proche de la tension de service du LCD (3,0 V), indiquée sur sa fiche.
 
 `#FLG01` et `#FLG02` sont les PWR_FLAG des rails +12 V et GND, qui ne sont
 alimentés que par un connecteur.
@@ -122,13 +127,16 @@ alimentés que par un connecteur.
 ### Prédiviseur MB506
 
 - `J2` entrée RF, terminaison `R3` 51 R, liaison capacitive `C7` 1 nF vers IN (broche 1).
-- Entrée complémentaire /IN (broche 8) découplée à la masse par `C8` 1 nF.
+- Entrée complémentaire /IN (broche 8) découplée à la masse par `C8` 100 nF.
 - VCC (broche 2) en +5 V, découplé par `C9` 100 nF.
-- Sortie OUT (broche 4) vers l'étage de mise en forme.
+- Sortie OUT (broche 4) : pull-down `R19` (2K2) vers GND, en parallèle de la
+  liaison capacitive vers l'étage de mise en forme. C'est une terminaison
+  usuelle pour une sortie de type collecteur ouvert / ECL.
 - Broche 7 (NC) marquée non connectée.
+- SW1 (broche 3) et SW2 (broche 6) non connectées.
 
-Rapport de division réglé par `J3` selon la table du constructeur
-(H = VCC, L = ouvert) :
+D'après la table du constructeur (H = VCC, L = ouvert), SW1 et SW2 tous deux
+ouverts donnent le rapport **1/256**, fixe sur cette carte :
 
 | SW1 | SW2 | Division |
 |---|---|---|
@@ -137,14 +145,18 @@ Rapport de division réglé par `J3` selon la table du constructeur
 | +5 V | ouvert | 1/128 |
 | +5 V | +5 V | 1/64 |
 
-Sans cavalier, le montage divise par 256.
+Le schéma d'origine prévoyait un connecteur `J3` pour choisir le rapport ; il
+n'apparaît plus sur le schéma relu et corrigé, qui laisse SW1/SW2 flottants.
+Pour changer de rapport, relier l'une ou les deux broches au +5 V.
 
 ### Mise en forme vers D5
 
-Sortie ECL du MB506 → `C10` 100 nF → `R4` 1 k → base de `Q1` (2N2369).
-`R5` 100 k ramène la base à la masse, émetteur à la masse, collecteur tiré au
-+3 V par `R6` 1 k. Le collecteur attaque D5. Le niveau logique vu par
-l'Arduino est donc bien du 3 V, d'où la présence du régulateur LM317L.
+Sortie ECL du MB506 → `C10` 100 nF → `R4` 3,3 kΩ → base de `Q1` (2N2369).
+Émetteur à la masse, collecteur tiré au +3 V par `R6` 470 Ω. Le collecteur
+attaque D5. Aucune résistance ne ramène la base à la masse : `Q1` est monté en
+amplificateur de commutation classique, polarisé par le seul courant de base
+fourni à travers `R4`. Le niveau logique vu par l'Arduino est donc bien du
+3 V, d'où la présence du régulateur LM317L.
 
 ### Arduino
 
@@ -212,16 +224,35 @@ Les points suivants ont été déduits ; ils sont à confronter à l'original.
 
 | Élément | Retenu | Raison |
 |---|---|---|
-| `R2` (ADJ→GND du LM317L) | 140 R | Valeur donnant exactement 3,00 V avec `R1` = 100 R. Hors série E24, à prendre en 1 % (E48). La lecture directe sur la photo était illisible. |
 | `Q1` | 2N2369 | Lecture la plus probable de l'annotation ; transistor de commutation rapide cohérent avec l'usage. Tout NPN rapide équivalent convient. |
-| `R4`, `R5`, `R6` | 1 k, 100 k, 1 k | Valeurs de polarisation usuelles pour cet étage ; chiffres illisibles sur la photo. |
-| `R3` | 51 R | Terminaison 50 Ω d'entrée RF. |
-| `R17`, `R18`, `C12` | 10 kΩ, 10 kΩ, 1 µF | Valeurs usuelles pour une référence à mi-tension : dix fois plus raide que les résistances de ligne, avec un découplage. Les chiffres du papier sont illisibles. |
+| `R17`, `R18` | 3,3 kΩ chacune | Valeur clairement lisible sur le schéma relu. |
 | Affectation des 10 broches de `DS1` | 1..4 = COM1..COM4, 5..10 = SEG1..SEG6 | La fiche donne le nombre de broches et le multiplexage, pas leur ordre. **À confirmer avant fabrication.** |
+| `U1` | L7805 | Annotation « 78A05 » ou proche, restée ambiguë sur les deux versions du schéma. Empreinte TO-220 conservée (1,5 A). Si le composant réel est un 78L05/78M05 (TO-92, plus faible courant), changer l'empreinte en conséquence. |
 
-Le papier annotait les dix résistances de ligne « 100K », ce qui est cohérent
-avec une polarisation de LCD. Une première transcription les avait ramenées à
-220 Ω en supposant un afficheur à LED : c'était une erreur, corrigée depuis.
+Le schéma manuscrit relu (`docs/Schema_propre.jpg`) est nettement plus lisible
+que la première photo et a permis de corriger plusieurs valeurs mal lues, ainsi
+que d'ajouter un composant absent de la première transcription (`R19`, 2K2, en
+terminaison de la sortie du MB506). Le tableau ci-dessous liste les
+changements :
+
+| Élément | Ancienne valeur | Valeur corrigée |
+|---|---|---|
+| `R1` | 100 R | 220 R |
+| `R2` | 160 R | 300 R |
+| `R4` | 1 k | 3,3 k |
+| `R6` | 1 k | 470 R |
+| `C8` | 1 n | 100 n |
+| `R17`, `R18` | 10 k | 3,3 k |
+| ancien `R5` (100 k, base→GND) | présent | supprimé, absent du schéma relu |
+| ancien `J3` (sélecteur SW1/SW2) | présent | supprimé, SW1/SW2 laissés flottants |
+| `R19` (2K2, OUT MB506→GND) | absent | ajouté |
+
+Reste une zone non exploitée du schéma relu : un réseau optionnel 100 nF en
+parallèle avec 470 kΩ apparaît près de la broche complémentaire (~IN, broche 8)
+du MB506, mais ses deux extrémités semblent en l'air sur le dessin. Il n'a pas
+été reproduit ; `C8` (100 nF vers la masse) couvre le découplage usuel de cette
+broche pour une utilisation en entrée simple. À vérifier sur l'original si le
+comptage se révèle instable.
 
 ## Ce qui reste à faire
 

@@ -3505,7 +3505,7 @@
 				)
 			)
 		)
-		(property "Value" "100R"
+		(property "Value" "220R"
 			(at 162.56 38.1 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3585,7 +3585,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "300R"
 			(at 162.56 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4219,7 +4219,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1n"
+		(property "Value" "100n"
 			(at 64.77 113.665 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4228,6 +4228,7 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide no)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
@@ -4457,88 +4458,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x03")
-		(at 55.88 132.08 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "00f14a05-fd98-4f06-9246-23c76c1d9f47")
-		(property "Reference" "J3"
-			(at 55.88 127.0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DIV SEL"
-			(at 55.88 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 55.88 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 55.88 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 55.88 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4b2bbfb6-e6d9-47ef-ab10-9be5d4d3bf48")
-		)
-		(pin "2"
-			(uuid "ec2b0fa0-88fa-4494-9053-cc08525d4e42")
-		)
-		(pin "3"
-			(uuid "9b7023e3-9cd7-4b30-9f29-1e4ea4dfb9ad")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 119.38 101.6 90)
 		(unit 1)
@@ -4638,7 +4557,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "3k3"
 			(at 139.7 101.6 270)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4692,86 +4611,6 @@
 			(project "ic202-frequencemetre"
 				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
 					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 154.94 111.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a8c86759-7ec8-4d64-b960-6d16277a7d37")
-		(property "Reference" "R5"
-			(at 152.4 111.76 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100k"
-			(at 154.94 111.76 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide no)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 153.162 111.76 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 154.94 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 154.94 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5dba0de8-192e-4174-9b16-41194ad5c6e3")
-		)
-		(pin "2"
-			(uuid "6dbc88f5-2dfb-4d29-81a8-8186f19d8e44")
-		)
-		(instances
-			(project "ic202-frequencemetre"
-				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
-					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -4882,7 +4721,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "470R"
 			(at 162.56 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5206,13 +5045,23 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 101.60000000000001) (xy 115.57 101.6)
+			(xy 99.06 101.60000000000001) (xy 107.95 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "381a0af9-79bc-4bc8-8769-3459ddfc7822")
+		(uuid "78d070ae-e5ba-4a1c-9168-cfd127ba28cd")
+	)
+	(wire
+		(pts
+			(xy 107.95 101.6) (xy 115.57 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6704e7b6-9e42-4186-9d99-ba49107b39c9")
 	)
 	(wire
 		(pts
@@ -5233,22 +5082,6 @@
 			(type default)
 		)
 		(uuid "1ccf7407-3aa8-490b-9564-7beaa57aad3e")
-	)
-	(wire
-		(pts
-			(xy 154.94 101.6) (xy 154.94 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9cb8dffa-4234-4a09-91d0-974e1010611f")
-	)
-	(junction
-		(at 154.94 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f566e081-53fa-417d-931d-6be27b9a5a78")
 	)
 	(wire
 		(pts
@@ -5576,16 +5409,6 @@
 		)
 		(uuid "8d75bec5-8f1d-45ca-a1f9-74420c822797")
 	)
-	(label "SW1"
-		(at 73.66 109.22000000000001 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "120c7e36-c129-40e2-95fa-8911b260d469")
-	)
 	(label "GND"
 		(at 86.36 119.38000000000001 270)
 		(effects
@@ -5595,16 +5418,6 @@
 			(justify right bottom)
 		)
 		(uuid "601a15a4-3bd1-4020-b4e6-8b78cc4131b2")
-	)
-	(label "SW2"
-		(at 73.66 111.76 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "65566f47-e0ab-4ae4-bfc2-a62076a8e91f")
 	)
 	(label "+5V"
 		(at 104.14 123.19 90)
@@ -5625,46 +5438,6 @@
 			(justify right bottom)
 		)
 		(uuid "077cfef6-df9a-46f9-ac34-9537f3d2635a")
-	)
-	(label "SW1"
-		(at 60.96 134.62 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7058fab0-bdf2-4c2a-b9ce-37ee1bf1de9d")
-	)
-	(label "SW2"
-		(at 60.96 132.08 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9b83a20f-7ca5-4662-9f0e-fcbdb715a19c")
-	)
-	(label "+5V"
-		(at 60.96 129.54000000000002 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1a2553f9-6186-465a-b347-8b2331c62030")
-	)
-	(label "GND"
-		(at 154.94 115.57000000000001 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "918a9a2c-30d4-4857-866b-44041db6b048")
 	)
 	(label "+3V"
 		(at 162.56 82.55 90)
@@ -5900,7 +5673,7 @@
 		)
 		(uuid "9957b5b1-146f-48c8-8fbf-9787d3bfdb3d")
 	)
-	(text "PREDIVISEUR MB506  (1/64 - 1/128 - 1/256 selon J3)"
+	(text "PREDIVISEUR MB506  (division fixe 1/256)"
 		(exclude_from_sim no)
 		(at 25.4 83.82 0)
 		(effects
@@ -5959,7 +5732,7 @@
 		)
 		(uuid "d84f01c7-802e-4ceb-be71-d6ee4bb59da2")
 	)
-	(text "J3 : SW1/SW2 ouverts = 1/256 ; relies a +5V = 1/64 (voir README)"
+	(text "SW1/SW2 non connectes (ouverts) : division fixe par 256. Voir README pour reconfigurer."
 		(exclude_from_sim no)
 		(at 25.4 142.24 0)
 		(effects
@@ -6894,7 +6667,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "3k3"
 			(at 297.18 208.28 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6974,7 +6747,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "3k3"
 			(at 297.18 220.98 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7795,6 +7568,120 @@
 			(justify right bottom)
 		)
 		(uuid "f44c8cf2-2c54-40ab-85e4-c48cda96566c")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 107.95 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5422b060-6e2c-40bd-a92e-ec5657d72f69")
+		(property "Reference" "R19"
+			(at 105.41 109.22 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2K2"
+			(at 107.95 109.22 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide no)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 106.172 109.22 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 107.95 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "39f41cb3-ee27-4a9c-8773-218ae0b56226")
+		)
+		(pin "2"
+			(uuid "f1a8e888-c20c-42c5-979f-6f2febfbf71c")
+		)
+		(instances
+			(project "ic202-frequencemetre"
+				(path "/77e9ff15-8520-461e-95f2-e48831172f30"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 107.95 101.6) (xy 107.95 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "255a3db5-2e88-4883-a915-f3534ecc7506")
+	)
+	(junction
+		(at 107.95 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "984a9d5e-0353-4037-a4c6-c7b483d74445")
+	)
+	(label "GND"
+		(at 107.95 113.03 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3a3413e5-b1c7-4ec6-9555-edd2f9e0d03b")
+	)
+	(no_connect
+		(at 73.66 109.22000000000001)
+		(uuid "88c2bfb8-014c-47ce-a313-3ecca246d2f9")
+	)
+	(no_connect
+		(at 73.66 111.76)
+		(uuid "68f00dbf-0794-4518-9a51-8b7923c731c5")
 	)
 	(sheet_instances
 		(path "/"
