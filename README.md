@@ -133,21 +133,23 @@ alimentés que par un connecteur.
   liaison capacitive vers l'étage de mise en forme. C'est une terminaison
   usuelle pour une sortie de type collecteur ouvert / ECL.
 - Broche 7 (NC) marquée non connectée.
-- SW1 (broche 3) et SW2 (broche 6) non connectées.
+- SW1 (broche 3) et SW2 (broche 6) reliées directement au rail +5 V.
 
-D'après la table du constructeur (H = VCC, L = ouvert), SW1 et SW2 tous deux
-ouverts donnent le rapport **1/256**, fixe sur cette carte :
+D'après la table du constructeur (H = VCC, L = ouvert), SW1 et SW2 au niveau H
+donnent le rapport **1/64**, câblé en dur sur cette carte :
 
 | SW1 | SW2 | Division |
 |---|---|---|
 | ouvert | ouvert | 1/256 |
 | ouvert | +5 V | 1/128 |
 | +5 V | ouvert | 1/128 |
-| +5 V | +5 V | 1/64 |
+| **+5 V** | **+5 V** | **1/64** |
 
 Le schéma d'origine prévoyait un connecteur `J3` pour choisir le rapport ; il
-n'apparaît plus sur le schéma relu et corrigé, qui laisse SW1/SW2 flottants.
-Pour changer de rapport, relier l'une ou les deux broches au +5 V.
+n'apparaît plus sur le schéma relu, qui laisse SW1/SW2 flottants (1/256 par
+défaut). À la demande explicite, les deux broches sont ici reliées au +5 V
+pour fixer la division à 1/64. Pour revenir à un autre rapport, déconnecter
+l'une ou les deux broches de +5 V (les remettre flottantes redonne 1/256).
 
 ### Mise en forme vers D5
 

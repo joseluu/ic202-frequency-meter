@@ -4199,7 +4199,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 66.04 111.76 0)
+		(at 66.04 119.38 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4209,7 +4209,7 @@
 		(dnp no)
 		(uuid "4c1610c6-7479-4c65-aba6-7ab85fa27a42")
 		(property "Reference" "C8"
-			(at 67.31 113.665 0)
+			(at 67.31 121.285 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4220,7 +4220,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 64.77 113.665 0)
+			(at 64.77 121.285 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4232,7 +4232,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 62.23 110.795 0)
+			(at 62.23 118.41499999999999 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4243,7 +4243,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 111.76 0)
+			(at 66.04 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4254,7 +4254,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 66.04 111.76 0)
+			(at 66.04 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5035,7 +5035,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 104.14) (xy 66.04 107.95)
+			(xy 66.04 104.14) (xy 66.04 115.57)
 		)
 		(stroke
 			(width 0)
@@ -5390,7 +5390,7 @@
 		(uuid "bb7a366d-6ac3-49c6-beb7-4b40df04aa75")
 	)
 	(label "GND"
-		(at 66.04 115.57000000000001 270)
+		(at 66.04 123.19 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5673,7 +5673,7 @@
 		)
 		(uuid "9957b5b1-146f-48c8-8fbf-9787d3bfdb3d")
 	)
-	(text "PREDIVISEUR MB506  (division fixe 1/256)"
+	(text "PREDIVISEUR MB506  (division fixe 1/64)"
 		(exclude_from_sim no)
 		(at 25.4 83.82 0)
 		(effects
@@ -5732,7 +5732,7 @@
 		)
 		(uuid "d84f01c7-802e-4ceb-be71-d6ee4bb59da2")
 	)
-	(text "SW1/SW2 non connectes (ouverts) : division fixe par 256. Voir README pour reconfigurer."
+	(text "SW1 et SW2 relies a +5V (niveau H) : division fixe par 64. Voir README."
 		(exclude_from_sim no)
 		(at 25.4 142.24 0)
 		(effects
@@ -7675,13 +7675,45 @@
 		)
 		(uuid "3a3413e5-b1c7-4ec6-9555-edd2f9e0d03b")
 	)
-	(no_connect
-		(at 73.66 109.22000000000001)
-		(uuid "88c2bfb8-014c-47ce-a313-3ecca246d2f9")
+	(wire
+		(pts
+			(xy 73.66 109.22000000000001) (xy 69.85 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c59b915-2b2c-4913-84eb-805a072707f4")
 	)
-	(no_connect
-		(at 73.66 111.76)
-		(uuid "68f00dbf-0794-4518-9a51-8b7923c731c5")
+	(wire
+		(pts
+			(xy 73.66 111.76) (xy 69.85 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82014396-bd5f-462d-b52e-b5937900f46f")
+	)
+	(label "+5V"
+		(at 69.85 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "534cec91-0542-42ad-9f4b-7c92a55f7cda")
+	)
+	(label "+5V"
+		(at 69.85 111.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1e1bceb6-25b8-4fcc-b86c-9ff53e4e949d")
 	)
 	(sheet_instances
 		(path "/"
