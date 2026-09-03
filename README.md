@@ -127,7 +127,11 @@ alimentés que par un connecteur.
 ### Prédiviseur MB506
 
 - `J2` entrée RF, terminaison `R3` 51 R, liaison capacitive `C7` 1 nF vers IN (broche 1).
-- Entrée complémentaire /IN (broche 8) découplée à la masse par `C8` 100 nF.
+- Entrée complémentaire /IN (broche 8) : découplée à la masse par `C8` 100 nF,
+  et polarisée par `R20` 470 kΩ vers GND. C'est le réseau optionnel repéré sur
+  le schéma relu (voir « Hypothèses de transcription ») ; il fixe le point de
+  repos de l'entrée complémentaire quand le MB506 est piloté en simple
+  extrémité (un seul signal sur IN, ~IN laissée au repos).
 - VCC (broche 2) en +5 V, découplé par `C9` 100 nF.
 - Sortie OUT (broche 4) : pull-down `R19` (2K2) vers GND, en parallèle de la
   liaison capacitive vers l'étage de mise en forme. C'est une terminaison
@@ -153,12 +157,13 @@ l'une ou les deux broches de +5 V (les remettre flottantes redonne 1/256).
 
 ### Mise en forme vers D5
 
-Sortie ECL du MB506 → `C10` 100 nF → `R4` 3,3 kΩ → base de `Q1` (2N2369).
-Émetteur à la masse, collecteur tiré au +3 V par `R6` 470 Ω. Le collecteur
-attaque D5. Aucune résistance ne ramène la base à la masse : `Q1` est monté en
-amplificateur de commutation classique, polarisé par le seul courant de base
-fourni à travers `R4`. Le niveau logique vu par l'Arduino est donc bien du
-3 V, d'où la présence du régulateur LM317L.
+Sortie ECL du MB506 → `C10` 100 nF → base de `Q1` (2N2369). `R4` 3,3 kΩ relie
+la base au collecteur (contre-réaction continue, pas une résistance série vers
+la masse comme dans une première version du schéma). Émetteur à la masse,
+collecteur tiré au +3 V par `R6` 470 Ω, et c'est ce nœud collecteur qui attaque
+D5. Le point de repos de `Q1` s'auto-régule par cette contre-réaction plutôt
+que par un pont de base classique. Le niveau logique vu par l'Arduino est donc
+bien du 3 V, d'où la présence du régulateur LM317L.
 
 ### Arduino
 
@@ -233,28 +238,28 @@ Les points suivants ont été déduits ; ils sont à confronter à l'original.
 
 Le schéma manuscrit relu (`docs/Schema_propre.jpg`) est nettement plus lisible
 que la première photo et a permis de corriger plusieurs valeurs mal lues, ainsi
-que d'ajouter un composant absent de la première transcription (`R19`, 2K2, en
-terminaison de la sortie du MB506). Le tableau ci-dessous liste les
-changements :
+que d'ajouter des composants absents de la première transcription. Le tableau
+ci-dessous liste les changements :
 
 | Élément | Ancienne valeur | Valeur corrigée |
 |---|---|---|
 | `R1` | 100 R | 220 R |
 | `R2` | 160 R | 300 R |
-| `R4` | 1 k | 3,3 k |
 | `R6` | 1 k | 470 R |
 | `C8` | 1 n | 100 n |
 | `R17`, `R18` | 10 k | 3,3 k |
 | ancien `R5` (100 k, base→GND) | présent | supprimé, absent du schéma relu |
 | ancien `J3` (sélecteur SW1/SW2) | présent | supprimé, SW1/SW2 laissés flottants |
 | `R19` (2K2, OUT MB506→GND) | absent | ajouté |
+| `R4` | 1 k, en série cap→base | 3,3 k, en contre-réaction base→collecteur |
+| `R20` (470 kΩ, broche 8 ~IN→GND) | absent | ajouté |
 
-Reste une zone non exploitée du schéma relu : un réseau optionnel 100 nF en
-parallèle avec 470 kΩ apparaît près de la broche complémentaire (~IN, broche 8)
-du MB506, mais ses deux extrémités semblent en l'air sur le dessin. Il n'a pas
-été reproduit ; `C8` (100 nF vers la masse) couvre le découplage usuel de cette
-broche pour une utilisation en entrée simple. À vérifier sur l'original si le
-comptage se révèle instable.
+Deux de ces corrections ont été apportées directement dans KiCad par
+l'utilisateur puis relues par la suite : le rebranchement de `R4` en
+contre-réaction base→collecteur (la première transcription le plaçait par
+erreur en série entre `C10` et la base), et l'ajout de `R20`, le réseau
+repéré près de la broche complémentaire (~IN, broche 8) du MB506, qui polarise
+cette broche vers la masse quand le composant est piloté en entrée simple.
 
 ## Ce qui reste à faire
 

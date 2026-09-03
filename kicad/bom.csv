@@ -16,6 +16,7 @@
 "R6","470R","Resistor_SMD:R_0603_1608Metric","Resistor"
 "R7-R16","100k","Resistor_SMD:R_0603_1608Metric","Resistor"
 "R19","2K2","Resistor_SMD:R_0603_1608Metric","Resistor"
+"R20","470K","Resistor_SMD:R_0603_1608Metric","Resistor"
 "U1","L7805","Package_TO_SOT_THT:TO-220-3_Vertical","Positive 1.5A 35V Linear Regulator, Fixed Output 5V, TO-220/TO-263/TO-252"
 "U2","LM317L","Package_TO_SOT_THT:TO-92_Inline","100mA 35V Adjustable Linear Regulator, TO-92"
 "U3","MB506","Package_DIP:DIP-8_W7.62mm","Fujitsu MB506 ultra high frequency prescaler, 2.4 GHz, divide by 64/128/256, DIP-8"
