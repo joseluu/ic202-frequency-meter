@@ -1254,7 +1254,7 @@
 					)
 				)
 			)
-			(property "Footprint" "IC202:Arduino_Pro_Mini_Header_2x12"
+			(property "Footprint" "frequencemetre:Arduino_Pro_Mini_Header_2x12"
 				(at 0 -5.08 0)
 				(effects
 					(font
@@ -4428,7 +4428,7 @@
 				)
 			)
 		)
-		(property "Footprint" "IC202:Arduino_Pro_Mini_Header_2x12"
+		(property "Footprint" "frequencemetre:Arduino_Pro_Mini_Header_2x12"
 			(at 241.3 101.6 0)
 			(hide yes)
 			(show_name no)

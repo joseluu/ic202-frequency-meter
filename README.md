@@ -18,8 +18,8 @@ transistor alimenté en 3 V → broche D5 d'un Arduino Pro Mini → afficheur LC
 | `kicad/ic202-frequencemetre.kicad_pcb` | Carte, encore vide |
 | `kicad/IC202.kicad_sym` | Symboles créés pour ce projet |
 | `kicad/sym-lib-table` | Enregistrement de la bibliothèque de symboles `IC202` (portée projet) |
-| `kicad/IC202.pretty/` | Empreintes créées pour ce projet |
-| `kicad/fp-lib-table` | Enregistrement de la bibliothèque d'empreintes `IC202` (portée projet) |
+| `kicad/frequencemetre.pretty/` | Empreintes créées pour ce projet |
+| `kicad/fp-lib-table` | Enregistrement de la bibliothèque d'empreintes `frequencemetre` (portée projet) |
 | `kicad/ic202-frequencemetre.pdf` / `.svg` | Schéma exporté |
 | `kicad/bom.csv` | Nomenclature |
 | `kicad/erc.rpt` | Rapport ERC |
@@ -182,7 +182,7 @@ pour la programmation par le connecteur FTDI de la carte.
 
 **Montage sur picots.** Le Pro Mini n'est pas soudé directement : il se
 branche sur deux barrettes de picots femelles soudées sur le PCB principal
-(empreinte `IC202:Arduino_Pro_Mini_Header_2x12`). Il se trouve donc surélevé
+(empreinte `frequencemetre:Arduino_Pro_Mini_Header_2x12`). Il se trouve donc surélevé
 par rapport à la carte, et le volume dégagé en dessous est disponible pour
 d'autres composants. Cette empreinte ne modélise que les deux courtyards des
 barrettes (pas de contour de carte complet ni de courtyard unique englobant
