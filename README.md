@@ -127,6 +127,10 @@ alimentés que par un connecteur.
 ### Prédiviseur MB506
 
 - `J2` entrée RF, terminaison `R3` 51 R, liaison capacitive `C7` 1 nF vers IN (broche 1).
+  Pas de connecteur SMA monté : un mini câble coaxial est soudé directement
+  sur deux pastilles (`TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm`,
+  pas 2,54 mm, perçage 0,8 mm) — âme sur la pastille 1 (IN), blindage sur
+  la pastille 2 (GND).
 - Entrée complémentaire /IN (broche 8) : découplée à la masse par `C8` 100 nF,
   et polarisée par `R20` 470 kΩ vers GND. C'est le réseau optionnel repéré sur
   le schéma relu (voir « Hypothèses de transcription ») ; il fixe le point de
