@@ -17,7 +17,9 @@ transistor alimenté en 3 V → broche D5 d'un Arduino Pro Mini → afficheur LC
 | `kicad/ic202-frequencemetre.kicad_sch` | Schéma (feuille A3 unique) |
 | `kicad/ic202-frequencemetre.kicad_pcb` | Carte, encore vide |
 | `kicad/IC202.kicad_sym` | Symboles créés pour ce projet |
-| `kicad/sym-lib-table` | Enregistrement de la bibliothèque `IC202` (portée projet) |
+| `kicad/sym-lib-table` | Enregistrement de la bibliothèque de symboles `IC202` (portée projet) |
+| `kicad/IC202.pretty/` | Empreintes créées pour ce projet |
+| `kicad/fp-lib-table` | Enregistrement de la bibliothèque d'empreintes `IC202` (portée projet) |
 | `kicad/ic202-frequencemetre.pdf` / `.svg` | Schéma exporté |
 | `kicad/bom.csv` | Nomenclature |
 | `kicad/erc.rpt` | Rapport ERC |
@@ -178,6 +180,23 @@ L'ATmega328P à 8 MHz fonctionne sans réserve jusqu'à 2,7 V.
 D13 est laissé libre à cause de la LED intégrée. TXO/RXI restent disponibles
 pour la programmation par le connecteur FTDI de la carte.
 
+**Montage sur picots.** Le Pro Mini n'est pas soudé directement : il se
+branche sur deux barrettes de picots femelles soudées sur le PCB principal
+(empreinte `IC202:Arduino_Pro_Mini_Header_2x12`). Il se trouve donc surélevé
+par rapport à la carte, et le volume dégagé en dessous est disponible pour
+d'autres composants. Cette empreinte ne modélise que les deux courtyards des
+barrettes (pas de contour de carte complet ni de courtyard unique englobant
+tout le module), justement pour ne pas signaler ce volume comme occupé.
+
+Géométrie vérifiée contre l'empreinte open source
+[`Arduino_Pro_Mini_Socket`](https://github.com/Alarm-Siren/arduino-kicad-library)
+(2 rangées de 12 broches au pas de 2,54 mm, 15,24 mm entre rangées) : 24
+broches au total, pas de connecteur de programmation FTDI modélisé. Les
+broches A4/SDA et A5/SCL du Pro Mini réel ne sont pas sur ces barrettes — ce
+sont des pastilles au dos du module, atteignables seulement par un fil volant
+— et ont été retirées du symbole `IC202:Arduino_Pro_Mini`, qui ne comptait
+d'ailleurs déjà aucune connexion sur ces deux broches.
+
 ### Afficheur LCD
 
 `docs/LCD.png` donne la fiche du composant :
@@ -276,10 +295,9 @@ cette broche vers la masse quand le composant est piloté en entrée simple.
    la fiche et conditionne le firmware. Sans elle, on peut router la carte mais
    pas afficher un chiffre juste.
 2. **Confirmer l'affectation des 10 broches** en communs et segments.
-3. **Empreinte de `A1`.** Aucune empreinte standard KiCad ne correspond au
-   Pro Mini ; à créer avant de router la carte. `DS1` n'a pas besoin
-   d'empreinte, il n'est pas monté sur ce PCB (voir « Afficheur LCD »).
-   `J4` est un header 1×10 au pas de 2,54 mm (`Connector_PinHeader_2.54mm:
+3. **Empreinte de `A1`.** `DS1` n'a pas besoin d'empreinte, il n'est pas
+   monté sur ce PCB (voir « Afficheur LCD »). `J4` est un header 1×10 au
+   pas de 2,54 mm (`Connector_PinHeader_2.54mm:
    PinHeader_1x10_P2.54mm_Vertical`).
 4. **Confirmer les valeurs du tableau d'hypothèses** sur le schéma d'origine.
 5. **Implantation et routage** de la carte, encore vide.

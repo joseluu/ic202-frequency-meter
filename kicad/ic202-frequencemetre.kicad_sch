@@ -1238,12 +1238,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "A"
 				(at 2.54 0 0)
-				(show_name no)
-				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1252,57 +1248,47 @@
 			)
 			(property "Value" "Arduino_Pro_Mini"
 				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "Module:Arduino_Pro_Mini"
+			(property "Footprint" "IC202:Arduino_Pro_Mini_Header_2x12"
 				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
+				(hide yes)
 			)
 			(property "Datasheet" "https://www.arduino.cc/en/pmwiki.php?n=Main/ArduinoBoardProMini"
 				(at 0 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
+				(hide yes)
 			)
-			(property "Description" "Arduino Pro Mini module (ATmega328P), 2x12 pin headers plus A4/A5 inner pins"
+			(property "Description" "Arduino Pro Mini module (ATmega328P), 2x12 pin headers. A4/SDA et A5/SCL (broches arriere, non alignees sur les headers) omises : non utilisees dans ce projet."
 				(at 0 -10.16 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
+				(hide yes)
 			)
 			(property "ki_keywords" "arduino pro mini atmega328p module"
 				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
+				(hide yes)
 			)
 			(symbol "Arduino_Pro_Mini_0_1"
 				(rectangle
@@ -1750,44 +1736,7 @@
 						)
 					)
 				)
-				(pin bidirectional line
-					(at -2.54 -22.86 90)
-					(length 5.08)
-					(name "A4/SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "25"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 2.54 -22.86 90)
-					(length 5.08)
-					(name "A5/SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "26"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
-			(embedded_fonts no)
 		)
 		(symbol "IC202:LCD_3DIGIT_TN_10PIN"
 			(pin_names
@@ -3117,10 +3066,6 @@
 		(uuid "15a2bb31-9f16-49af-a8e5-5fda4e8856bf")
 	)
 	(no_connect
-		(at 238.76 129.54)
-		(uuid "6352460a-6705-4ccd-8eec-31e06d812a99")
-	)
-	(no_connect
 		(at 256.54 111.76)
 		(uuid "6a2bee3b-99ae-4dde-9590-bfe677d1735d")
 	)
@@ -3135,10 +3080,6 @@
 	(no_connect
 		(at 256.54 96.52)
 		(uuid "acbf4bfc-3db6-45bd-aa7a-5531eae04ca9")
-	)
-	(no_connect
-		(at 243.84 129.54)
-		(uuid "e0097ddb-44a8-4aa7-8d36-1c13bea72227")
 	)
 	(no_connect
 		(at 226.06 93.98)
@@ -4487,7 +4428,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "IC202:Arduino_Pro_Mini_Header_2x12"
 			(at 241.3 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4509,7 +4450,7 @@
 				)
 			)
 		)
-		(property "Description" "Arduino Pro Mini module (ATmega328P), 2x12 pin headers plus A4/A5 inner pins"
+		(property "Description" "Arduino Pro Mini module (ATmega328P), 2x12 pin headers. A4/SDA et A5/SCL (broches arriere, non alignees sur les headers) omises : non utilisees dans ce projet."
 			(at 241.3 96.52 0)
 			(hide yes)
 			(show_name no)

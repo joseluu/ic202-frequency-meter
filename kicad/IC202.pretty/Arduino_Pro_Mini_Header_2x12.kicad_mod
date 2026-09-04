@@ -1,0 +1,232 @@
+(footprint "Arduino_Pro_Mini_Header_2x12"
+  (version 20241229)
+  (generator "kicad-mcp")
+  (generator_version "9.0")
+  (layer "F.Cu")
+  (descr "Arduino Pro Mini mounted on two 1x12 female header sockets (0.1in/2.54mm pitch, 0.6in/15.24mm row spacing). Only the two header courtyards are modelled - no full-board outline - so the volume under the plugged-in module is free for other components. Pad geometry and physical pin order verified against Alarm-Siren/arduino-kicad-library Arduino_Pro_Mini_Socket.kicad_mod (genuine SparkFun-style Pro Mini). Pad numbers 1-12 = left row top-to-bottom (TXO/D1, RXI/D0, RST, GND, D2..D9); pad numbers 13-24 = right row top-to-bottom (D10..D13, A0..A3, VCC, RST2, GND2, RAW) - matches symbol IC202:Arduino_Pro_Mini pins 1-24.")
+  (tags "arduino pro mini header socket connector")
+
+  (property "Reference" "REF**" (at 0 -14.5 0)
+    (layer "F.SilkS")
+    (uuid "8fb27a47-5236-4361-9d05-12c6b3608e39")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Value" "Arduino_Pro_Mini_Header_2x12" (at 0 17 0)
+    (layer "F.Fab")
+    (uuid "6b3e4a4f-5f80-46fd-883b-81d31f37d175")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Datasheet" "" (at 0 0 0)
+    (layer "F.Fab")
+    (uuid "bc2a3461-5c32-428b-bb12-0a853c773efc")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (pad "1" thru_hole circle
+    (at -7.62 -12.7)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "9706b09e-1169-46bd-9877-2c0c31bea9cc")
+  )
+
+  (pad "2" thru_hole circle
+    (at -7.62 -10.16)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "ee68062d-bbea-4e43-b1fd-c593f4899ee8")
+  )
+
+  (pad "3" thru_hole circle
+    (at -7.62 -7.62)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "1e55359b-8ddf-4d74-912c-c48a1de26546")
+  )
+
+  (pad "4" thru_hole circle
+    (at -7.62 -5.08)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "be1aaa1d-9102-4bfd-862e-07a9de7c0bfc")
+  )
+
+  (pad "5" thru_hole circle
+    (at -7.62 -2.54)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "c75d4850-72db-4f68-937b-f3bcb9692165")
+  )
+
+  (pad "6" thru_hole circle
+    (at -7.62 0)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "02a014d6-46af-486a-814f-50bb5d12e408")
+  )
+
+  (pad "7" thru_hole circle
+    (at -7.62 2.54)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "323e7034-7bf8-4544-b2ff-56e01874db90")
+  )
+
+  (pad "8" thru_hole circle
+    (at -7.62 5.08)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "8812a353-4a94-46b4-b21a-d71add4cdbe6")
+  )
+
+  (pad "9" thru_hole circle
+    (at -7.62 7.62)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "e302f03d-f50c-4423-b53d-02892f4c7bf2")
+  )
+
+  (pad "10" thru_hole circle
+    (at -7.62 10.16)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "16648786-87bd-4248-8044-dde567e4fc4f")
+  )
+
+  (pad "11" thru_hole circle
+    (at -7.62 12.7)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "1c316ae1-e3f4-4fb4-a6c5-3a401b97cf2c")
+  )
+
+  (pad "12" thru_hole circle
+    (at -7.62 15.24)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "e5f9a332-a421-463d-a15b-534f8eedf91b")
+  )
+
+  (pad "13" thru_hole circle
+    (at 7.62 15.24)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "4568d5ca-c9c1-4216-a5c4-d4ed68c72675")
+  )
+
+  (pad "14" thru_hole circle
+    (at 7.62 12.7)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "43f5de9a-b306-4257-aeac-020a7f23fe0e")
+  )
+
+  (pad "15" thru_hole circle
+    (at 7.62 10.16)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "1ed6b142-a72f-4bba-9c93-583d229dde5f")
+  )
+
+  (pad "16" thru_hole circle
+    (at 7.62 7.62)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "8a7e0bdb-073e-4aa3-8079-3018fd2f5d26")
+  )
+
+  (pad "17" thru_hole circle
+    (at 7.62 5.08)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "d10b0a2f-4a40-4f4d-a7b5-079caea4581c")
+  )
+
+  (pad "18" thru_hole circle
+    (at 7.62 2.54)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "cb460b07-5b77-41d2-ad85-9a272dd842b1")
+  )
+
+  (pad "19" thru_hole circle
+    (at 7.62 0)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "a2544cdb-63cd-4f7a-8518-359de547cbc7")
+  )
+
+  (pad "20" thru_hole circle
+    (at 7.62 -2.54)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "bf18bf27-1c67-4ad4-b7fc-9c6734738db5")
+  )
+
+  (pad "21" thru_hole circle
+    (at 7.62 -5.08)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "3dfe1e2d-056f-4c44-9762-6da51af496dd")
+  )
+
+  (pad "22" thru_hole circle
+    (at 7.62 -7.62)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "5e2aeca3-ad9d-4968-926e-f5549757c196")
+  )
+
+  (pad "23" thru_hole circle
+    (at 7.62 -10.16)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "28c0e25a-f0bc-47f1-8070-55aad77c1641")
+  )
+
+  (pad "24" thru_hole circle
+    (at 7.62 -12.7)
+    (size 1.7 1.7)
+    (drill 1)
+    (layers "*.Cu" "*.Mask")
+    (uuid "5ce783e1-67a0-4025-8938-ee7fa4777f4f")
+  )
+
+  (fp_rect (start -8.92 -13.97) (end -6.32 16.51)
+    (stroke (width 0.05) (type solid)) (fill none) (layer "F.CrtYd")
+    (uuid "d2b0d2b1-1a11-4a1f-9c1a-1a1a1a1a1a01")
+  )
+
+  (fp_rect (start 6.32 -13.97) (end 8.92 16.51)
+    (stroke (width 0.05) (type solid)) (fill none) (layer "F.CrtYd")
+    (uuid "d2b0d2b1-1a11-4a1f-9c1a-1a1a1a1a1a02")
+  )
+
+  (fp_line (start -9.4 -12.7) (end -8.42 -12.7)
+    (stroke (width 0.15) (type solid)) (layer "F.SilkS")
+    (uuid "d2b0d2b1-1a11-4a1f-9c1a-1a1a1a1a1a03")
+  )
+
+)

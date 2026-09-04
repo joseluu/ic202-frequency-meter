@@ -1,5 +1,5 @@
 "Reference","Value","Footprint","Description"
-"A1","Pro Mini 3V3/8MHz","","Arduino Pro Mini module (ATmega328P), 2x12 pin headers plus A4/A5 inner pins"
+"A1","Pro Mini 3V3/8MHz","IC202:Arduino_Pro_Mini_Header_2x12","Arduino Pro Mini module (ATmega328P), 2x12 pin headers. A4/SDA et A5/SCL (broches arriere, non alignees sur les headers) omises : non utilisees dans ce projet."
 "C1,C3,C5,C8-C11","100n","Capacitor_SMD:C_0603_1608Metric","Unpolarized capacitor"
 "C2,C4,C6","10u","Capacitor_SMD:C_0805_2012Metric","Unpolarized capacitor"
 "C7","1n","Capacitor_SMD:C_0603_1608Metric","Unpolarized capacitor"
