@@ -3028,7 +3028,7 @@
 		)
 		(uuid "b1c0cbb7-5143-490a-8976-5f76df211d8e")
 	)
-	(text "R17/R18/C12 : reference VLCD_MID = 3V/2.\nJ4 : nappe 10 conducteurs vers le LCD deporte."
+	(text "R17/R18/C12 : reference VLCD_MID = 3V/2.\nJ4 : header 2,54mm, nappe 10 conducteurs vers DS1.\nDS1 hors carte : monte a l'extremite du cable, pas sur ce PCB."
 		(exclude_from_sim no)
 		(at 330.2 210.82 0)
 		(effects
@@ -7369,7 +7369,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_SM10B-SRSS-TB_1x10-1MP_P1.00mm_Horizontal"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical"
 			(at 340.36 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -7608,7 +7608,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f4307f8f-5010-4c42-9ee2-fa72bec20e97")

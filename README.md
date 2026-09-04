@@ -225,8 +225,12 @@ référence ne bouge pas quand plusieurs broches commutent.
 | D7, D8, D9, D10, D11, D12 | SEG1 à SEG6 |
 
 **Liaison par nappe.** Le LCD est déporté au bout d'une nappe de 10
-conducteurs. `J4` représente le connecteur côté carte ; `DS1` est l'afficheur
-à l'autre extrémité.
+conducteurs. `J4` (header mâle au pas de 2,54 mm) est le seul connecteur
+présent sur la carte ; `DS1`, l'afficheur, n'est **pas monté sur ce PCB**,
+il se trouve à l'autre extrémité du câble. Le symbole `DS1` est marqué
+« hors carte » (`on_board: no`) : il reste dans le schéma et la nomenclature
+pour documenter le système complet, mais `sync_schematic_to_board` ne lui
+crée pas d'empreinte sur cette carte.
 
 ## Hypothèses de transcription
 
@@ -272,9 +276,11 @@ cette broche vers la masse quand le composant est piloté en entrée simple.
    la fiche et conditionne le firmware. Sans elle, on peut router la carte mais
    pas afficher un chiffre juste.
 2. **Confirmer l'affectation des 10 broches** en communs et segments.
-3. **Empreintes de `A1` et `DS1`.** Aucune empreinte standard KiCad ne
-   correspond au Pro Mini ni à ce LCD. `J4` utilise pour l'instant une
-   empreinte JST-SH 10 points, à remplacer par celle du connecteur retenu.
+3. **Empreinte de `A1`.** Aucune empreinte standard KiCad ne correspond au
+   Pro Mini ; à créer avant de router la carte. `DS1` n'a pas besoin
+   d'empreinte, il n'est pas monté sur ce PCB (voir « Afficheur LCD »).
+   `J4` est un header 1×10 au pas de 2,54 mm (`Connector_PinHeader_2.54mm:
+   PinHeader_1x10_P2.54mm_Vertical`).
 4. **Confirmer les valeurs du tableau d'hypothèses** sur le schéma d'origine.
 5. **Implantation et routage** de la carte, encore vide.
 6. **Firmware.** Comptage sur D5, division par 256 à compenser, puis génération

@@ -7,7 +7,7 @@
 "DS1","LCD 3 digits TN","","Afficheur LCD TN 3 digits 7 segments, 10 broches, multiplexe 1/4 duty 1/2 bias, 3.0V. Repartition COM/SEG a confirmer aupres du fournisseur."
 "J1","+12V IN","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
 "J2","RF IN","TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm","coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-"J4","LCD","Connector_JST:JST_SH_SM10B-SRSS-TB_1x10-1MP_P1.00mm_Horizontal","Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)"
+"J4","LCD","Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical","Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)"
 "Q1","2N2369","Package_TO_SOT_THT:TO-92_Inline","NPN transistor, base/emitter/collector"
 "R1","220R","Resistor_SMD:R_0603_1608Metric","Resistor"
 "R2","300R","Resistor_SMD:R_0603_1608Metric","Resistor"
