@@ -114,14 +114,25 @@ C'est le cas des repères de `R7`..`R16`.
 
 ### Alimentation
 
-`J1` (+12 V) → `U1` L7805 → +5 V → `U2` LM317L → +3 V.
+`J1` (+12 V) → `U1` AMS1117-5.0 → +5 V → `U2` AMS1117 (ADJ) → +3 V.
 Découplage 100 nF + 10 µF sur chacun des trois rails.
 
-Le +3 V est réglé par `R1` (220 R, VO→ADJ) et `R2` (300 R, ADJ→GND) :
+Les deux régulateurs sont en boîtier CMS SOT-223, choisis dans le stock
+PartsBox de l'utilisateur plutôt que les L7805/LM317L d'origine (traversants,
+non tenus en stock CMS) : mêmes coordonnées de broches, seule leur
+numérotation change. Sur `U1`, l'entrée devient la broche 3 (VI) et la
+sortie la broche 2 (VO) — sur `U2`, `1`=ADJ, `2`=VO, `3`=VI comme
+auparavant, l'architecture (référence 1,25 V, pont diviseur) étant la même
+famille que le LM317.
+
+Le +3 V est réglé par `R1` (220 R, VO→ADJ de `U2`) et `R2` (300 R,
+ADJ→GND) :
 
     Vout = 1,25 x (1 + 300/220) = 2,95 V
 
 C'est proche de la tension de service du LCD (3,0 V), indiquée sur sa fiche.
+Ce pont n'a pas changé de valeur : l'AMS1117 ajustable utilise la même
+référence 1,25 V que le LM317L qu'il remplace.
 
 `#FLG01` et `#FLG02` sont les PWR_FLAG des rails +12 V et GND, qui ne sont
 alimentés que par un connecteur.
@@ -169,7 +180,7 @@ la masse comme dans une première version du schéma). Émetteur à la masse,
 collecteur tiré au +3 V par `R6` 470 Ω, et c'est ce nœud collecteur qui attaque
 D5. Le point de repos de `Q1` s'auto-régule par cette contre-réaction plutôt
 que par un pont de base classique. Le niveau logique vu par l'Arduino est donc
-bien du 3 V, d'où la présence du régulateur LM317L.
+bien du 3 V, d'où la présence du second régulateur (`U2`).
 
 ### Arduino
 
@@ -266,8 +277,8 @@ la respecter.
 
 | Réf. | Rôle |
 |---|---|
-| `C1`, `C2` | HF / bulk BF, entrée `J1` et broche IN de `U1` |
-| `C3`, `C4` | HF / bulk BF, nœud +5 V partagé OUT de `U1` / VI de `U2` |
+| `C1`, `C2` | HF / bulk BF, entrée `J1` et broche 3 (VI) de `U1` |
+| `C3`, `C4` | HF / bulk BF, nœud +5 V partagé broche 2 (VO) de `U1` / broche 3 (VI) de `U2` |
 | `C5`, `C6` | HF / bulk BF, broche VO (sortie) de `U2` |
 | `C9` | HF, broche VCC de `U3` |
 | `C8` | HF de la broche ~IN (signal, pas alimentation) de `U3`, avec `R20` |
@@ -299,7 +310,6 @@ Les points suivants ont été déduits ; ils sont à confronter à l'original.
 | `Q1` | 2N2369 | Lecture la plus probable de l'annotation ; transistor de commutation rapide cohérent avec l'usage. Tout NPN rapide équivalent convient. |
 | `R17`, `R18` | 3,3 kΩ chacune | Valeur clairement lisible sur le schéma relu. |
 | Affectation des 10 broches de `DS1` | 1..4 = COM1..COM4, 5..10 = SEG1..SEG6 | La fiche donne le nombre de broches et le multiplexage, pas leur ordre. **À confirmer avant fabrication.** |
-| `U1` | L7805 | Annotation « 78A05 » ou proche, restée ambiguë sur les deux versions du schéma. Empreinte TO-220 conservée (1,5 A). Si le composant réel est un 78L05/78M05 (TO-92, plus faible courant), changer l'empreinte en conséquence. |
 
 Le schéma manuscrit relu (`docs/Schema_propre.jpg`) est nettement plus lisible
 que la première photo et a permis de corriger plusieurs valeurs mal lues, ainsi
