@@ -4614,6 +4614,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage HF, coller pres de l'entree J1 et de la broche 1 (IN) de U1" (at 48.26 38.1 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "5aa14452-5697-4da0-ac49-ab5522701457")
 		)
@@ -4695,6 +4698,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage HF, coller au noeud +5V (broche 3 OUT de U1 / broche 3 VI de U2)" (at 104.14 38.1 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "1281a99d-68f4-48f8-8ec9-0317dc32ae93")
 		)
@@ -4934,6 +4940,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage bulk BF, coller pres de l'entree J1 et de la broche 1 (IN) de U1" (at 58.42 38.1 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "29359193-0e3e-4254-958a-a202b6a4b5e6")
 		)
@@ -5015,6 +5024,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage de la reference VLCD_MID, coller au point milieu du pont R17/R18" (at 309.88 220.98 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "0ea6b7af-ac47-42f5-a1e8-5763f0cbb03a")
 		)
@@ -5251,6 +5263,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage HF de la broche 8 (~IN, entree complementaire) de U3 vers la masse, pas du decouplage d'alimentation - coller a la broche avec R20" (at 55.88 114.3 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "d31b487f-9928-4a98-92d4-3581ea6ec741")
 		)
@@ -5406,6 +5421,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOOP CRITIQUE - chemin de comptage U3(OUT)-R19-C10-R4-R6-Q1 vers D5_SIG (broche 8 de A1), surface minimale, eloigner des sources de bruit" (at 142.24 95.25 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "b113f364-269e-419c-821f-8d209c13213f")
 		)
@@ -5644,6 +5662,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOOP CRITIQUE - pas du decouplage : terminaison + chemin de comptage U3(OUT)-R19-C10-R4-R6-Q1 vers D5_SIG (broche 8 de A1), surface minimale, eloigner des sources de bruit" (at 107.95 109.22 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "39f41cb3-ee27-4a9c-8773-218ae0b56226")
 		)
@@ -5725,6 +5746,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage HF du rail +3V pres de R6 (tirage collecteur Q1), point le plus eloigne du regulateur U2" (at 280.67 102.87 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "bbec5407-ca91-4549-83fb-5acbd574419c")
 		)
@@ -5885,6 +5909,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage bulk BF, coller au noeud +5V (broche 3 OUT de U1 / broche 3 VI de U2)" (at 114.3 38.1 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "3c4fe44a-6c3c-41f7-b308-6e1cd022439e")
 		)
@@ -6045,6 +6072,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage bulk BF, coller broche 2 (VO, sortie) de U2" (at 193.04 38.1 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "3cf48628-afdf-4da6-b593-954ba59e8e67")
 		)
@@ -6203,6 +6233,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOOP CRITIQUE - pas du decouplage : couplage AC + chemin RF d'entree J2-R3-C7 vers U3 (broche 1, IN), surface minimale imperative (signal jusqu'a 2,4GHz)" (at 60.96 101.6 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "20622353-a963-434a-a7a8-f68dd5085a80")
 		)
@@ -6282,6 +6315,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOOP CRITIQUE - chemin de comptage U3(OUT)-R19-C10-R4-R6-Q1 vers D5_SIG (broche 8 de A1), surface minimale, eloigner des sources de bruit" (at 162.56 86.36 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "3db9bbf5-94a7-4056-b8a0-7b2968c2427f")
 		)
@@ -6688,6 +6724,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOOP CRITIQUE - chemin de comptage U3(OUT)-R19-C10-R4-R6-Q1 vers D5_SIG (broche 8 de A1), surface minimale, eloigner des sources de bruit" (at 160.02 101.6 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "b79951b2-81d9-43b7-a136-342a4da2e7ad")
 		)
@@ -6770,6 +6809,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOOP CRITIQUE - pas du decouplage : couplage AC + chemin de comptage U3(OUT)-R19-C10-R4-R6-Q1 vers D5_SIG (broche 8 de A1), surface minimale, eloigner des sources de bruit" (at 119.38 101.6 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "fbd60df0-1b25-4588-b740-dac1c28a5163")
 		)
@@ -6851,6 +6893,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage HF, coller broche 2 (VO, sortie) de U2" (at 182.88 38.1 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "acee28b4-a7fb-452e-bd43-3bf02279b060")
 		)
@@ -6930,6 +6975,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOOP CRITIQUE - chemin RF d'entree J2-R3-C7 vers U3 (broche 1, IN), surface minimale imperative (signal jusqu'a 2,4GHz)" (at 43.18 109.22 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "e97a4cd3-b5f3-4937-a70a-103122074b1c")
 		)
@@ -7448,6 +7496,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOCAL - decouplage HF, coller broche 2 (VCC) de U3" (at 104.14 127.0 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "e0791fa6-b0a9-407e-96dd-783d65405d30")
 		)
@@ -7710,6 +7761,9 @@
 				)
 			)
 		)
+    (property "Placement" "LOOP CRITIQUE - chemin RF d'entree J2-R3-C7 vers U3 (broche 1, IN), surface minimale imperative (signal jusqu'a 2,4GHz)" (at 30.48 101.6 0)
+      (effects (font (size 1.27 1.27)) (hide yes))
+    )
 		(pin "1"
 			(uuid "77f8fc5e-c70a-4caf-b4b5-f4591dab0671")
 		)

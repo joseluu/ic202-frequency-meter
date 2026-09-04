@@ -251,6 +251,44 @@ il se trouve à l'autre extrémité du câble. Le symbole `DS1` est marqué
 pour documenter le système complet, mais `sync_schematic_to_board` ne lui
 crée pas d'empreinte sur cette carte.
 
+## Intention de conception pour le placement/routage
+
+Le schéma porte, en plus de la connectivité, une propriété masquée
+`Placement` sur chaque composant dont la position physique finale importe
+au-delà du simple raccordement électrique — suivant le skill Claude Code
+`conception-electronique-kicad`. Cette propriété n'apparaît pas sur le
+schéma ; elle se lit via `get_schematic_component` ou en filtrant le
+`.kicad_sch` sur `(property "Placement"`. **Elle ne s'applique pas toute
+seule** : au moment du placement/routage, il faut demander explicitement de
+la respecter.
+
+**Découplage documenté** (préfixe `LOCAL`) :
+
+| Réf. | Rôle |
+|---|---|
+| `C1`, `C2` | HF / bulk BF, entrée `J1` et broche IN de `U1` |
+| `C3`, `C4` | HF / bulk BF, nœud +5 V partagé OUT de `U1` / VI de `U2` |
+| `C5`, `C6` | HF / bulk BF, broche VO (sortie) de `U2` |
+| `C9` | HF, broche VCC de `U3` |
+| `C8` | HF de la broche ~IN (signal, pas alimentation) de `U3`, avec `R20` |
+| `C11` | HF du rail +3 V près de `R6`, point le plus éloigné de `U2` |
+| `C12` | référence `VLCD_MID`, point milieu du pont `R17`/`R18` |
+
+Vérification faite : les trois circuits intégrés actifs (`U1`, `U2`, `U3`)
+ont chacun un découplage local documenté sur leur(s) broche(s)
+d'alimentation. `A1` (Arduino Pro Mini) n'est pas inclus dans cette
+vérification : c'est un module complet avec son propre découplage embarqué,
+pas un CI nu à décrire ici.
+
+**Boucles critiques documentées** (préfixe `LOOP CRITIQUE`, hors
+découplage) :
+
+- `J2`-`R3`-`C7` → broche IN de `U3` : chemin RF d'entrée, jusqu'à 2,4 GHz,
+  surface minimale impérative.
+- `U3`(OUT)-`R19`-`C10`-`R4`-`R6`-`Q1` → `D5_SIG` (broche D5 de `A1`) : chemin
+  de comptage, le signal que l'instrument existe pour mesurer — à éloigner
+  des sources de bruit.
+
 ## Hypothèses de transcription
 
 La photo du schéma manuscrit n'est pas assez nette pour toutes les annotations.
