@@ -412,6 +412,29 @@ Résultat final vérifié via `run_drc` : **0 erreur**, 10 avertissements
 cosmétiques (7 vias non connectées des deux côtés, 1 chevauchement
 silkscreen, 2 silkscreen sur cuivre).
 
+### Bug critique trouvé et corrigé après coup : broches actives sans net
+
+En inspectant le PCB routé, une broche visiblement connectée à trop
+d'endroits (broche 1 de `U3`) a révélé un bug bien plus large : **5 nets
+sans label explicite** (`Net-(U3-IN)`, `Net-(U3-OUT)`, `Net-(U3-~{IN})`,
+`Net-(Q1-B)`, `Net-(U2-ADJ)`) — électriquement valides au niveau du schéma,
+l'ERC ne signale rien — mais que `sync_schematic_to_board` échoue à
+résoudre silencieusement, laissant les broches concernées **sans net du
+tout côté PCB**. Conséquence réelle : la sortie du prescaler (`U3` OUT) et
+la base de `Q1` n'ont jamais été reliées à la chaîne de comptage, sur les
+deux cartes, malgré un DRC à 0 erreur — une broche sans net n'ayant par
+ailleurs aucune obligation de clearance, ce qui explique l'apparence de
+connexion multiple constatée.
+
+Corrigé : les 5 nets renommés explicitement (`MB506_IN`, `MB506_OUT`,
+`MB506_NIN`, `Q1_BASE`, `U2_ADJ`), resynchronisés vers les deux PCB, la
+règle de clearance globale remontée de 0 mm (!) à 0,2 mm — qui a d'ailleurs
+mis au jour des croisements de pistes que le clearance nul masquait — puis
+carte principale entièrement reroutée : **0 erreur `run_drc`** au final
+(327 pistes, 40 vias, même limite de 0,15 mm sur quelques pistes corrigée
+comme précédemment). Règle ajoutée au skill `conception-electronique-kicad`
+pour détecter ce cas systématiquement avant tout premier routage.
+
 **Piège outil découvert à cette occasion :** `check_courtyard_overlaps`
 (MCP) évalue le chevauchement de courtyard d'une empreinte à partir de sa
 *bounding box globale*, pas des polygones réels — pour une empreinte à

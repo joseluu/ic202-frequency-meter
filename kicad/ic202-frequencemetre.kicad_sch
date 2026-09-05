@@ -9988,6 +9988,56 @@
 		)
 		(uuid "71853159-be6b-43a9-8d55-beadbdde8a6f")
 	)
+	(label "MB506_IN"
+		(at 73.66 101.60000000000001 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b7188219-c140-4c60-ad12-611422ada924")
+	)
+	(label "MB506_OUT"
+		(at 99.06 101.60000000000001 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "119b882c-d573-4597-a238-f6e595607da7")
+	)
+	(label "MB506_NIN"
+		(at 73.66 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c56e8797-7ec3-442c-82b8-339cfad58a37")
+	)
+	(label "Q1_BASE"
+		(at 154.94 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "91081fcc-dcca-4b91-a613-60ce7855d951")
+	)
+	(label "U2_ADJ"
+		(at 139.7 38.1 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1d4fe79a-bbba-4032-afef-719d323481e7")
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
