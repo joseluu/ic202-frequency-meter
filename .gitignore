@@ -10,6 +10,7 @@ fp-info-cache
 # Rapports regeneres a la demande
 kicad/erc.rpt
 kicad/*.xml
+kicad/*_drc_violations.json
 
 # Verrous poses par KiCad quand le projet est ouvert
 ~*.lck

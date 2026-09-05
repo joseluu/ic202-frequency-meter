@@ -300,6 +300,27 @@ découplage) :
   de comptage, le signal que l'instrument existe pour mesurer — à éloigner
   des sources de bruit.
 
+### Placement initial (fait)
+
+Carte 80 × 70 mm, paysage. Emplacements imposés par l'utilisateur :
+
+- `J1` (+12 V IN) : bord haut, au milieu.
+- `J2` (RF IN, coax à souder) : bord gauche.
+- `J4` (nappe LCD, header 2,54 mm) : bord droit.
+- `A1` (Arduino Pro Mini sur picots) : à droite, proche de `J4`, orientation
+  paysage, extrémité USB/FTDI côté gauche — rotation (90°) vérifiée par la
+  mesure (`get_pad_position` sur le groupe de broches TXO/RXI/RST/GND, qui
+  ressort à une abscisse inférieure au centre du composant), pas déduite par
+  raisonnement géométrique sur le symbole schéma.
+
+Le reste des 39 empreintes est réparti par proximité en respectant les
+groupes `Placement` ci-dessus (alimentation en haut, chaîne RF/prédiviseur
+à gauche, chemin de comptage entre `U3` et `A1`, échelle de polarisation LCD
+`R7`-`R18`/`C12` entre `A1` et `J4`). Vérifié : 0 chevauchement de courtyard,
+0 erreur DRC (1 avertissement cosmétique silkscreen/masque, à nettoyer plus
+tard). Méthode suivie : skill Claude Code `kicad-pcb-placement`. Le routage
+lui-même n'est pas commencé.
+
 ## Hypothèses de transcription
 
 La photo du schéma manuscrit n'est pas assez nette pour toutes les annotations.
@@ -348,7 +369,8 @@ cette broche vers la masse quand le composant est piloté en entrée simple.
    pas de 2,54 mm (`Connector_PinHeader_2.54mm:
    PinHeader_1x10_P2.54mm_Vertical`).
 4. **Confirmer les valeurs du tableau d'hypothèses** sur le schéma d'origine.
-5. **Implantation et routage** de la carte, encore vide.
+5. **Routage** de la carte — le placement initial est fait (voir « Placement
+   initial » ci-dessus), le routage lui-même reste à faire.
 6. **Firmware.** Comptage sur D5, division par 256 à compenser, puis génération
    des trames LCD en 1/4 duty et 1/2 bias : chaque broche prend tour à tour
    l'état haut, bas ou haute impédance, et la polarité s'inverse à chaque trame
