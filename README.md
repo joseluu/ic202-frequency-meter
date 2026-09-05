@@ -338,8 +338,11 @@ Carte **80 × 50 mm**, paysage (hauteur réduite de 70 à 50 mm après le
 passage aux boîtiers CMS ci-dessous, qui a libéré de la place). Emplacements
 imposés par l'utilisateur :
 
-- `J1` (+12 V IN) : bord haut, au milieu.
-- `J2` (RF IN, coax à souder) : bord gauche.
+- `J1` (+12 V IN) : bord haut, au milieu, rangée de broches **parallèle**
+  au bord (rotation 90° par rapport à l'orientation par défaut du
+  footprint, qui les mettait perpendiculaires).
+- `J2` (RF IN, coax à souder) : bord gauche, rangée de broches parallèle au
+  bord (même correction de rotation).
 - `J4` (nappe LCD, header 2,54 mm) : bord droit.
 - `A1` (Arduino Pro Mini sur picots) : décalé de 3 mm vers la gauche par
   rapport au premier placement, toujours à droite et proche de `J4`,
@@ -349,6 +352,11 @@ imposés par l'utilisateur :
   dégagé entre les deux barrettes de picots — l'empreinte de `A1` ne porte
   que les deux courtyards des barrettes (voir « Arduino » ci-dessus), donc
   cet espace n'est pas signalé occupé.
+
+L'orientation « parallèle au bord le plus proche » pour `J1`/`J2` est
+désormais une règle par défaut du skill `kicad-pcb-placement` : elle
+s'applique à tout connecteur proche d'un bord, sauf orientation contraire
+explicitement demandée.
 
 Le reste (bloc d'alimentation, chaîne RF/prédiviseur, chemin de comptage,
 cavaliers `JP1`-`JP10`, `R17`/`R18`/`C12`) est réparti par proximité en
