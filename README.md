@@ -272,11 +272,36 @@ référence ne bouge pas quand plusieurs broches commutent.
 est inséré en série entre chaque ligne (`R7`..`R16`) et sa broche de `J4` —
 un par ligne LCD. Chaque ligne passe donc par deux nœuds électriques
 distincts : le nœud côté Arduino/résistance (nom de net inchangé,
-`LCD_COM1`..`LCD_SEG6`) et le nœud côté `J4` (net auto-généré
-`Net-(J4-PinX)`), reliés par le cavalier. Ouverts (comportement par défaut,
-sans étain), ils isolent la carte de la nappe LCD — utile pour tester
-l'étage Arduino/résistances seul avant de raccorder l'afficheur. Les fermer
-au fer à souder rétablit la liaison normale.
+`LCD_COM1`..`LCD_SEG6`) et le nœud côté `J4` (nommé explicitement
+`J4_COM1`..`J4_SEG6`), reliés par le cavalier. Ouverts (comportement par
+défaut, sans étain), ils isolent la carte de la nappe LCD — utile pour
+tester l'étage Arduino/résistances seul avant de raccorder l'afficheur.
+Les fermer au fer à souder rétablit la liaison normale.
+
+**Deux bugs de câblage trouvés et corrigés après coup, à l'occasion d'une
+tentative de routage** (voir plus bas) :
+
+1. Les 10 fils reliant chaque cavalier à sa broche de `J4` passaient par un
+   point de coude intermédiaire à une abscisse commune (`x=330.2`) pour
+   rester orthogonaux. Plusieurs de ces segments verticaux se chevauchaient
+   partiellement sur cette même abscisse (les nappes de lignes LCD ont des
+   pas différents côté résistances — 5,08 mm — et côté `J4` — 2,54 mm — donc
+   leurs coudes intermédiaires ne tombent pas aux mêmes hauteurs), ce qui a
+   **court-circuité entre elles plusieurs lignes LCD** (`COM2`-`COM3`-`COM4`-`SEG1`
+   d'un côté, `SEG3`-`SEG4` de l'autre). L'ERC ne signalait qu'un avertissement
+   discret (« multiple_net_names »), pas une erreur — c'est une relecture du
+   netlist exporté par `kicad-cli` (source de vérité) qui a révélé l'ampleur
+   réelle du problème. Corrigé en remplaçant les 10 chemins coudés par un
+   fil diagonal unique par ligne (pas de point partagé entre lignes
+   différentes, donc aucun risque de chevauchement accidentel).
+2. Après correction du point 1, le nom de net explicite (`J4_COM1` etc.) a
+   dû être ajouté sur chaque broche de `J4` : sans lui, `sync_schematic_to_board`
+   (l'outil MCP qui importe le schéma dans le PCB) n'arrivait pas à
+   résoudre les nets anonymes auto-générés par KiCad (`Net-(J4-Pin_X)`) et
+   laissait ces broches et celles des cavaliers **sans net du tout** côté
+   PCB — invisibles pour le ratsnest et l'autorouteur, silencieusement, sans
+   qu'aucun outil ne le signale comme une erreur. Un nom de net explicite
+   sur chaque broche contourne cette limite.
 
 **Affectation des broches de l'Arduino :**
 
