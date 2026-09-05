@@ -12,5 +12,15 @@ kicad/erc.rpt
 kicad/*.xml
 kicad/*_drc_violations.json
 
+# Fichiers intermediaires de l'autorouteur (Freerouting)
+kicad/*.dsn
+kicad/*.ses
+
+# Experimentation FD-Autoplacer, non retenue
+kicad/fd-autoplacer-experiment/
+
 # Verrous poses par KiCad quand le projet est ouvert
 ~*.lck
+
+# Etat interne Claude Code (sans rapport avec le projet)
+.claude/

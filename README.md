@@ -388,7 +388,29 @@ cavaliers `JP1`-`JP10`, `R17`/`R18`/`C12`) est réparti par proximité en
 suivant les groupes `Placement` du schéma. Vérifié via `run_drc`
 (kicad-cli, source de vérité du projet) : **0 erreur**, 3 avertissements
 cosmétiques silkscreen. Méthode suivie : skill Claude Code
-`kicad-pcb-placement`. Le routage lui-même n'est pas commencé.
+`kicad-pcb-placement`.
+
+### Routage (fait)
+
+Autoroutage via Freerouting (`autoroute`, 2 couches F.Cu/B.Cu) sur ce
+placement : **16,5 s**, 278 pistes + 29 vias. Deux passes de nettoyage
+après coup :
+
+- 11 pistes exportées à 0,15 mm par le pipeline KiCad→DSN→Freerouting alors
+  que la carte impose 0,2 mm minimum (limite connue de ce pipeline,
+  reproductible même en relançant l'autoroutage plusieurs fois de suite —
+  ne se corrige pas tout seul). Corrigées une par une : piste supprimée puis
+  retracée au même endroit avec une largeur explicite de 0,2 mm.
+- Un essai de placement alternatif via l'outil externe **FD-Autoplacer**
+  (`github.com/joseluu/FD-Autoplacer`, optimisation par descente de
+  gradient) a été comparé sur ce même schéma : passage clone → exécution →
+  import direct, sans succès retenu (chevauchement de courtyard réel,
+  plusieurs composants débordant du bord de carte) — le placement à la main
+  ci-dessus a été conservé.
+
+Résultat final vérifié via `run_drc` : **0 erreur**, 10 avertissements
+cosmétiques (7 vias non connectées des deux côtés, 1 chevauchement
+silkscreen, 2 silkscreen sur cuivre).
 
 **Piège outil découvert à cette occasion :** `check_courtyard_overlaps`
 (MCP) évalue le chevauchement de courtyard d'une empreinte à partir de sa
@@ -450,8 +472,7 @@ cette broche vers la masse quand le composant est piloté en entrée simple.
    pas de 2,54 mm (`Connector_PinHeader_2.54mm:
    PinHeader_1x10_P2.54mm_Vertical`).
 4. **Confirmer les valeurs du tableau d'hypothèses** sur le schéma d'origine.
-5. **Routage** de la carte — le placement initial est fait (voir « Placement
-   initial » ci-dessus), le routage lui-même reste à faire.
+5. ~~Routage de la carte~~ — fait (voir « Routage » ci-dessus), 0 erreur DRC.
 6. **Firmware.** Comptage sur D5, division par 256 à compenser, puis génération
    des trames LCD en 1/4 duty et 1/2 bias : chaque broche prend tour à tour
    l'état haut, bas ou haute impédance, et la polarité s'inverse à chaque trame
