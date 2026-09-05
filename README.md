@@ -137,7 +137,17 @@ référence 1,25 V que le LM317L qu'il remplace.
 `#FLG01` et `#FLG02` sont les PWR_FLAG des rails +12 V et GND, qui ne sont
 alimentés que par un connecteur.
 
+`J1` est un connecteur 4 broches (header 2,54 mm) : les broches 1 et 2,
+adjacentes, portent toutes deux le +12 V ; les broches 3 et 4, adjacentes,
+portent toutes deux le GND. Le doublement de chaque broche répartit le
+courant d'alimentation sur deux points de contact.
+
 ### Prédiviseur MB506
+
+`U3` est le Fujitsu **MB506PF**, boîtier CMS SOP-8 (208 mil, empreinte
+`Package_SO:SOIC-8_5.3x6.2mm_P1.27mm`), en remplacement du MB506 traversant
+DIP-8 d'origine — même brochage 1-8 (IN, VCC, SW1, OUT, GND, SW2, NC, /IN),
+choisi dans le stock PartsBox de l'utilisateur.
 
 - `J2` entrée RF, terminaison `R3` 51 R, liaison capacitive `C7` 1 nF vers IN (broche 1).
   Pas de connecteur SMA monté : un mini câble coaxial est soudé directement
@@ -174,7 +184,18 @@ l'une ou les deux broches de +5 V (les remettre flottantes redonne 1/256).
 
 ### Mise en forme vers D5
 
-Sortie ECL du MB506 → `C10` 100 nF → base de `Q1` (2N2369). `R4` 3,3 kΩ relie
+`Q1` est le NPN RF **2SC5551AE-TD-E** (onsemi), boîtier CMS SOT-89
+(30 V, 300 mA, fT = 3,5 GHz), en remplacement du 2N2369 traversant (TO-18,
+fT ≈ 500 MHz) — choisi dans le stock PartsBox de l'utilisateur, largement
+assez rapide pour ce rôle. Le brochage réel (1 = base, 2 = collecteur sur
+la languette, 3 = émetteur) ne correspond pas à l'ordre du symbole générique
+KiCad `Q_NPN_BEC` (broche 2 = émetteur, broche 3 = collecteur) : le symbole a
+donc été remplacé par `Q_NPN_BCE` (broche 2 = collecteur, broche 3 =
+émetteur), qui a la même géométrie de broches — seul l'étiquetage
+broche/fonction change, le câblage existant reste intact — pour que la
+numérotation corresponde à celle de l'empreinte SOT-89.
+
+Sortie ECL du MB506 → `C10` 100 nF → base de `Q1`. `R4` 3,3 kΩ relie
 la base au collecteur (contre-réaction continue, pas une résistance série vers
 la masse comme dans une première version du schéma). Émetteur à la masse,
 collecteur tiré au +3 V par `R6` 470 Ω, et c'est ce nœud collecteur qui attaque
@@ -246,6 +267,17 @@ référence à mi-tension `VLCD_MID` à travers sa résistance de 100 kΩ.
 Le pont est dix fois plus raide que les résistances de ligne, pour que la
 référence ne bouge pas quand plusieurs broches commutent.
 
+**Cavaliers de coupure devant `J4`.** Un cavalier à souder ouvert par défaut
+(`JP1`..`JP10`, empreinte `Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm`)
+est inséré en série entre chaque ligne (`R7`..`R16`) et sa broche de `J4` —
+un par ligne LCD. Chaque ligne passe donc par deux nœuds électriques
+distincts : le nœud côté Arduino/résistance (nom de net inchangé,
+`LCD_COM1`..`LCD_SEG6`) et le nœud côté `J4` (net auto-généré
+`Net-(J4-PinX)`), reliés par le cavalier. Ouverts (comportement par défaut,
+sans étain), ils isolent la carte de la nappe LCD — utile pour tester
+l'étage Arduino/résistances seul avant de raccorder l'afficheur. Les fermer
+au fer à souder rétablit la liaison normale.
+
 **Affectation des broches de l'Arduino :**
 
 | Broche | Ligne LCD |
@@ -302,24 +334,40 @@ découplage) :
 
 ### Placement initial (fait)
 
-Carte 80 × 70 mm, paysage. Emplacements imposés par l'utilisateur :
+Carte **80 × 50 mm**, paysage (hauteur réduite de 70 à 50 mm après le
+passage aux boîtiers CMS ci-dessous, qui a libéré de la place). Emplacements
+imposés par l'utilisateur :
 
 - `J1` (+12 V IN) : bord haut, au milieu.
 - `J2` (RF IN, coax à souder) : bord gauche.
 - `J4` (nappe LCD, header 2,54 mm) : bord droit.
-- `A1` (Arduino Pro Mini sur picots) : à droite, proche de `J4`, orientation
-  paysage, extrémité USB/FTDI côté gauche — rotation (90°) vérifiée par la
-  mesure (`get_pad_position` sur le groupe de broches TXO/RXI/RST/GND, qui
-  ressort à une abscisse inférieure au centre du composant), pas déduite par
-  raisonnement géométrique sur le symbole schéma.
+- `A1` (Arduino Pro Mini sur picots) : décalé de 3 mm vers la gauche par
+  rapport au premier placement, toujours à droite et proche de `J4`,
+  orientation paysage, extrémité USB/FTDI côté gauche (rotation 90°, vérifiée
+  par la mesure des pads comme au premier placement).
+- `R7`..`R16` (échelle de polarisation LCD) : **sous `A1`**, dans le volume
+  dégagé entre les deux barrettes de picots — l'empreinte de `A1` ne porte
+  que les deux courtyards des barrettes (voir « Arduino » ci-dessus), donc
+  cet espace n'est pas signalé occupé.
 
-Le reste des 39 empreintes est réparti par proximité en respectant les
-groupes `Placement` ci-dessus (alimentation en haut, chaîne RF/prédiviseur
-à gauche, chemin de comptage entre `U3` et `A1`, échelle de polarisation LCD
-`R7`-`R18`/`C12` entre `A1` et `J4`). Vérifié : 0 chevauchement de courtyard,
-0 erreur DRC (1 avertissement cosmétique silkscreen/masque, à nettoyer plus
-tard). Méthode suivie : skill Claude Code `kicad-pcb-placement`. Le routage
-lui-même n'est pas commencé.
+Le reste (bloc d'alimentation, chaîne RF/prédiviseur, chemin de comptage,
+cavaliers `JP1`-`JP10`, `R17`/`R18`/`C12`) est réparti par proximité en
+suivant les groupes `Placement` du schéma. Vérifié via `run_drc`
+(kicad-cli, source de vérité du projet) : **0 erreur**, 3 avertissements
+cosmétiques silkscreen. Méthode suivie : skill Claude Code
+`kicad-pcb-placement`. Le routage lui-même n'est pas commencé.
+
+**Piège outil découvert à cette occasion :** `check_courtyard_overlaps`
+(MCP) évalue le chevauchement de courtyard d'une empreinte à partir de sa
+*bounding box globale*, pas des polygones réels — pour une empreinte à
+plusieurs rectangles de courtyard disjoints comme celle de `A1` (justement
+conçue pour laisser un volume libre au milieu), l'outil signale à tort un
+chevauchement dès qu'un autre composant entre dans cette bounding box, y
+compris pile au centre du volume libre. Vérifié en plaçant une résistance
+au centre exact de `A1` et en comparant : `check_courtyard_overlaps` la
+signale en conflit, `run_drc` (qui lit les vrais polygones KiCad) ne
+signale rien. Pour toute empreinte de ce genre, se fier à `run_drc`, pas à
+`check_courtyard_overlaps`.
 
 ## Hypothèses de transcription
 
