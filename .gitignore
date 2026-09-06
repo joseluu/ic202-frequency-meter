@@ -7,17 +7,14 @@
 _autosave-*
 fp-info-cache
 
-# Rapports regeneres a la demande
+# Rapports regeneres a la demande (kicad/ et ses sous-dossiers, ex. fd-autoplacer-experiment/)
 kicad/erc.rpt
-kicad/*.xml
-kicad/*_drc_violations.json
+kicad/**/*.xml
+kicad/**/*_drc_violations.json
 
 # Fichiers intermediaires de l'autorouteur (Freerouting)
-kicad/*.dsn
-kicad/*.ses
-
-# Experimentation FD-Autoplacer, non retenue
-kicad/fd-autoplacer-experiment/
+kicad/**/*.dsn
+kicad/**/*.ses
 
 # Verrous poses par KiCad quand le projet est ouvert
 ~*.lck
