@@ -9,8 +9,15 @@ fp-info-cache
 
 # Rapports regeneres a la demande (kicad/ et ses sous-dossiers, ex. fd-autoplacer-experiment/)
 kicad/erc.rpt
+kicad/drc-*.rpt
+kicad/autoroute-apres-drc.rpt
+kicad/compact-*.rpt
+kicad/avant-*.rpt
 kicad/**/*.xml
 kicad/**/*_drc_violations.json
+
+# Historique local KiCad (depot git interne de recup de fichiers)
+kicad/.history/
 
 # Fichiers intermediaires de l'autorouteur (Freerouting)
 kicad/**/*.dsn
