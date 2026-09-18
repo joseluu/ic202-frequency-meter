@@ -163,11 +163,15 @@ choisi dans le stock PartsBox de l'utilisateur.
 - Sortie OUT (broche 4) : pull-down `R19` (2K2) vers GND, en parallèle de la
   liaison capacitive vers l'étage de mise en forme. C'est une terminaison
   usuelle pour une sortie de type collecteur ouvert / ECL.
-- Broche 7 (NC) marquée non connectée.
-- SW1 (broche 3) et SW2 (broche 6) reliées directement au rail +5 V.
+- Broche 7 (NC) marquée non connectée. La datasheet Fujitsu ne lui donne
+  aucune fonction : le rapport de division est fixé uniquement par SW1 et
+  SW2, il n'y a pas de troisième entrée de sélection.
+- SW1 (broche 3) et SW2 (broche 6) reliées au rail +5 V **à travers un
+  cavalier à souder fermé** (`JP11` sur `MB506_SW1`, `JP12` sur `MB506_SW2`,
+  empreinte `Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm`).
 
 D'après la table du constructeur (H = VCC, L = ouvert), SW1 et SW2 au niveau H
-donnent le rapport **1/64**, câblé en dur sur cette carte :
+donnent le rapport **1/64**, comportement par défaut de cette carte :
 
 | SW1 | SW2 | Division |
 |---|---|---|
@@ -179,8 +183,10 @@ donnent le rapport **1/64**, câblé en dur sur cette carte :
 Le schéma d'origine prévoyait un connecteur `J3` pour choisir le rapport ; il
 n'apparaît plus sur le schéma relu, qui laisse SW1/SW2 flottants (1/256 par
 défaut). À la demande explicite, les deux broches sont ici reliées au +5 V
-pour fixer la division à 1/64. Pour revenir à un autre rapport, déconnecter
-l'une ou les deux broches de +5 V (les remettre flottantes redonne 1/256).
+pour fixer la division à 1/64. `JP11`/`JP12` remplacent ce sélecteur : livrés
+fermés, ils conservent le 1/64 ; couper `JP11` **ou** `JP12` au cutter remet
+la broche correspondante en l'air (niveau L) et donne 1/128, couper les deux
+donne 1/256. Un coup de fer à souder revient en arrière.
 
 ### Mise en forme vers D5
 
@@ -267,16 +273,17 @@ référence à mi-tension `VLCD_MID` à travers sa résistance de 100 kΩ.
 Le pont est dix fois plus raide que les résistances de ligne, pour que la
 référence ne bouge pas quand plusieurs broches commutent.
 
-**Cavaliers de coupure devant `J4`.** Un cavalier à souder ouvert par défaut
-(`JP1`..`JP10`, empreinte `Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm`)
+**Cavaliers de coupure devant `J4`.** Un cavalier à souder fermé par défaut
+(`JP1`..`JP10`, empreinte `Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm`)
 est inséré en série entre chaque ligne (`R7`..`R16`) et sa broche de `J4` —
 un par ligne LCD. Chaque ligne passe donc par deux nœuds électriques
 distincts : le nœud côté Arduino/résistance (nom de net inchangé,
 `LCD_COM1`..`LCD_SEG6`) et le nœud côté `J4` (nommé explicitement
-`J4_COM1`..`J4_SEG6`), reliés par le cavalier. Ouverts (comportement par
-défaut, sans étain), ils isolent la carte de la nappe LCD — utile pour
-tester l'étage Arduino/résistances seul avant de raccorder l'afficheur.
-Les fermer au fer à souder rétablit la liaison normale.
+`J4_COM1`..`J4_SEG6`), reliés par le cavalier. Fermés (comportement par
+défaut, pont de cuivre déjà présent sur l'empreinte), la liaison vers la
+nappe LCD est normale ; les couper au cutter isole la carte de la nappe —
+utile pour tester l'étage Arduino/résistances seul avant de raccorder
+l'afficheur. Un coup de fer à souder rétablit ensuite la liaison.
 
 **Deux bugs de câblage trouvés et corrigés après coup, à l'occasion d'une
 tentative de routage** (voir plus bas) :
@@ -471,7 +478,7 @@ ci-dessous liste les changements :
 | `C8` | 1 n | 100 n |
 | `R17`, `R18` | 10 k | 3,3 k |
 | ancien `R5` (100 k, base→GND) | présent | supprimé, absent du schéma relu |
-| ancien `J3` (sélecteur SW1/SW2) | présent | supprimé, SW1/SW2 laissés flottants |
+| ancien `J3` (sélecteur SW1/SW2) | présent | supprimé, remplacé par les cavaliers `JP11`/`JP12` (fermés = 1/64) |
 | `R19` (2K2, OUT MB506→GND) | absent | ajouté |
 | `R4` | 1 k, en série cap→base | 3,3 k, en contre-réaction base→collecteur |
 | `R20` (470 kΩ, broche 8 ~IN→GND) | absent | ajouté |
